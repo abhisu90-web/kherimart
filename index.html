@@ -1,81 +1,49 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>KheriMart</title>
 
 <style>
 
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Arial,sans-serif;
-}
-
 body{
-background:#f4f4f4;
+margin:0;
+font-family:Arial;
+background:#f5f5f5;
 }
 
 header{
 background:#1f7a3d;
-padding:18px;
+padding:15px;
+color:white;
 display:flex;
 justify-content:space-between;
 align-items:center;
-color:white;
 position:sticky;
 top:0;
-z-index:1000;
 }
 
 .logo{
-font-size:42px;
+font-size:38px;
 font-weight:bold;
 }
 
-.logo span{
-color:orange;
-}
-
-.menu{
-font-size:38px;
-}
-
-.hero{
+.cart-btn{
 background:orange;
-padding:60px 20px;
-text-align:center;
-color:white;
-}
-
-.hero h1{
-font-size:55px;
-margin-bottom:20px;
-}
-
-.hero p{
-font-size:24px;
-margin-bottom:30px;
-}
-
-.hero button{
-background:#1f7a3d;
-color:white;
-border:none;
-padding:18px 40px;
-font-size:22px;
+padding:10px 20px;
 border-radius:10px;
+font-size:22px;
 }
 
 .section{
-padding:30px 20px;
+padding:20px;
 }
 
 .section h2{
-font-size:45px;
-margin-bottom:25px;
+font-size:40px;
+margin-bottom:20px;
 }
 
 .products{
@@ -93,125 +61,105 @@ box-shadow:0 2px 10px rgba(0,0,0,0.1);
 
 .product img{
 width:100%;
-height:250px;
+height:230px;
 object-fit:cover;
 }
 
 .content{
-padding:18px;
+padding:15px;
 }
 
 .content h3{
-font-size:22px;
-margin-bottom:10px;
+font-size:20px;
 }
 
 .price{
-font-size:20px;
+font-size:28px;
 color:#1f7a3d;
 font-weight:bold;
-margin-bottom:10px;
+margin:10px 0;
 }
 
-.content p{
-font-size:15px;
+.add-btn{
+width:100%;
+padding:14px;
+background:#1f7a3d;
+color:white;
+border:none;
+border-radius:10px;
+font-size:20px;
+font-weight:bold;
+}
+
+.cart{
+position:fixed;
+bottom:0;
+left:0;
+right:0;
+background:white;
+padding:20px;
+box-shadow:0 -2px 10px rgba(0,0,0,0.2);
+display:none;
+max-height:70vh;
+overflow:auto;
+}
+
+.cart h2{
+margin-top:0;
+}
+
+.cart-item{
+display:flex;
+justify-content:space-between;
 margin-bottom:15px;
-color:#666;
+background:#f2f2f2;
+padding:10px;
+border-radius:10px;
 }
 
-.qty-box{
+.qty{
 display:flex;
 align-items:center;
 gap:10px;
-margin-bottom:15px;
 }
 
-.qty-box button{
-width:40px;
-height:40px;
+.qty button{
+width:35px;
+height:35px;
 border:none;
 background:#1f7a3d;
 color:white;
-font-size:22px;
-border-radius:8px;
+font-size:20px;
+border-radius:6px;
 }
 
-.qty-box input{
-width:60px;
-height:40px;
-text-align:center;
-font-size:18px;
-border:2px solid #ccc;
-border-radius:8px;
-}
-
-textarea{
+input,textarea{
 width:100%;
-height:70px;
-padding:10px;
+padding:12px;
+margin-bottom:15px;
 border-radius:10px;
 border:1px solid #ccc;
-margin-bottom:15px;
+font-size:16px;
 }
 
-.btn{
+.checkout{
 width:100%;
-background:#1f7a3d;
-color:white;
 padding:15px;
+background:green;
+color:white;
+font-size:22px;
+border:none;
+border-radius:12px;
+font-weight:bold;
+}
+
+.close{
+background:red;
+color:white;
+padding:10px;
 border:none;
 border-radius:10px;
-font-size:20px;
-font-weight:bold;
-}
-
-.features{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:20px;
-}
-
-.feature{
-background:white;
-padding:25px;
-border-radius:20px;
-text-align:center;
-font-size:24px;
-font-weight:bold;
-}
-
-footer{
-background:#111;
-color:white;
-padding:40px 20px;
-text-align:center;
-margin-top:40px;
-}
-
-footer h2{
-font-size:40px;
-margin-bottom:20px;
-}
-
-footer p{
 margin-bottom:10px;
-font-size:18px;
-}
-
-.whatsapp{
-position:fixed;
-right:20px;
-bottom:20px;
-background:#25d366;
-width:75px;
-height:75px;
-border-radius:50%;
-display:flex;
-justify-content:center;
-align-items:center;
-font-size:40px;
-color:white;
-text-decoration:none;
 }
 
 </style>
@@ -220,23 +168,16 @@ text-decoration:none;
 <body>
 
 <header>
-<div class="logo">Kheri<span>Mart</span></div>
-<div class="menu">☰</div>
+<div class="logo">KheriMart</div>
+
+<div class="cart-btn" onclick="openCart()">
+🛒 Cart (<span id="cartCount">0</span>)
+</div>
 </header>
 
-<section class="hero">
-<h1>Lakhimpur Kheri Ka Online Bazaar</h1>
-<p>Grocery, medicines, electronics aur home products ghar tak.</p>
+<div class="section">
 
-<button onclick="window.location.href='#grocery'">
-Shop Now
-</button>
-</section>
-
-<!-- Grocery -->
-
-<section class="section" id="grocery">
-<h2>🛒 Grocery Items</h2>
+<h2>🛒 Grocery</h2>
 
 <div class="products">
 
@@ -244,21 +185,16 @@ Shop Now
 <img src="https://images.unsplash.com/photo-1586201375761-83865001e31c?q=80&w=1200&auto=format&fit=crop">
 
 <div class="content">
-<h3>Basmati Rice</h3>
-<div class="price">₹120/kg</div>
-<p>Premium quality rice</p>
 
-<div class="qty-box">
-<button onclick="decreaseQty('rice')">-</button>
-<input type="number" id="rice" value="1">
-<button onclick="increaseQty('rice')">+</button>
+<h3>Basmati Rice</h3>
+
+<div class="price">
+₹120/kg
 </div>
 
-<textarea id="riceNote" placeholder="Kitna chahiye ya koi details"></textarea>
-
-<button class="btn"
-onclick="orderNow('Basmati Rice','rice','riceNote')">
-Order Now
+<button class="add-btn"
+onclick="addToCart('Basmati Rice',120)">
+Add To Cart
 </button>
 
 </div>
@@ -268,229 +204,35 @@ Order Now
 <img src="https://images.unsplash.com/photo-1620706857370-e1b9770e8bb1?q=80&w=1200&auto=format&fit=crop">
 
 <div class="content">
+
 <h3>Cooking Oil</h3>
-<div class="price">₹160/litre</div>
-<p>Refined sunflower oil</p>
 
-<div class="qty-box">
-<button onclick="decreaseQty('oil')">-</button>
-<input type="number" id="oil" value="1">
-<button onclick="increaseQty('oil')">+</button>
+<div class="price">
+₹160/litre
 </div>
 
-<textarea id="oilNote" placeholder="Kitna chahiye ya koi details"></textarea>
-
-<button class="btn"
-onclick="orderNow('Cooking Oil','oil','oilNote')">
-Order Now
+<button class="add-btn"
+onclick="addToCart('Cooking Oil',160)">
+Add To Cart
 </button>
 
 </div>
 </div>
-
-</div>
-</section>
-
-<!-- Medicines -->
-
-<section class="section" id="medicines">
-<h2>💊 Medicines</h2>
-
-<div class="products">
-
-<div class="product">
-<img src="https://images.unsplash.com/photo-1587854692152-cbe660dbde88?q=80&w=1200&auto=format&fit=crop">
-
-<div class="content">
-<h3>Paracetamol</h3>
-<div class="price">₹35</div>
-<p>Fever medicine tablets</p>
-
-<div class="qty-box">
-<button onclick="decreaseQty('med1')">-</button>
-<input type="number" id="med1" value="1">
-<button onclick="increaseQty('med1')">+</button>
-</div>
-
-<textarea id="med1Note"></textarea>
-
-<button class="btn"
-onclick="orderNow('Paracetamol','med1','med1Note')">
-Order Now
-</button>
-
-</div>
-</div>
-
-<div class="product">
-<img src="https://images.unsplash.com/photo-1471864190281-a93a3070b6de?q=80&w=1200&auto=format&fit=crop">
-
-<div class="content">
-<h3>Cough Syrup</h3>
-<div class="price">₹120</div>
-<p>Cold & cough relief</p>
-
-<div class="qty-box">
-<button onclick="decreaseQty('med2')">-</button>
-<input type="number" id="med2" value="1">
-<button onclick="increaseQty('med2')">+</button>
-</div>
-
-<textarea id="med2Note"></textarea>
-
-<button class="btn"
-onclick="orderNow('Cough Syrup','med2','med2Note')">
-Order Now
-</button>
-
-</div>
-</div>
-
-</div>
-</section>
-
-<!-- Electronics -->
-
-<section class="section">
-<h2>📱 Electronics</h2>
-
-<div class="products">
-
-<div class="product">
-<img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?q=80&w=1200&auto=format&fit=crop">
-
-<div class="content">
-<h3>Smartphone</h3>
-<div class="price">₹10,999</div>
-<p>Latest Android smartphone</p>
-
-<div class="qty-box">
-<button onclick="decreaseQty('mob')">-</button>
-<input type="number" id="mob" value="1">
-<button onclick="increaseQty('mob')">+</button>
-</div>
-
-<textarea id="mobNote"></textarea>
-
-<button class="btn"
-onclick="orderNow('Smartphone','mob','mobNote')">
-Order Now
-</button>
-
-</div>
-</div>
-
-<div class="product">
-<img src="https://images.unsplash.com/photo-1546435770-a3e426bf472b?q=80&w=1200&auto=format&fit=crop">
-
-<div class="content">
-<h3>Bluetooth Speaker</h3>
-<div class="price">₹899</div>
-<p>Portable speaker</p>
-
-<div class="qty-box">
-<button onclick="decreaseQty('speaker')">-</button>
-<input type="number" id="speaker" value="1">
-<button onclick="increaseQty('speaker')">+</button>
-</div>
-
-<textarea id="speakerNote"></textarea>
-
-<button class="btn"
-onclick="orderNow('Bluetooth Speaker','speaker','speakerNote')">
-Order Now
-</button>
-
-</div>
-</div>
-
-</div>
-</section>
-
-<!-- Construction -->
-
-<section class="section">
-<h2>🏗 Construction Materials</h2>
-
-<div class="products">
 
 <div class="product">
 <img src="https://images.unsplash.com/photo-1599707254554-027aeb4deacd?q=80&w=1200&auto=format&fit=crop">
 
 <div class="content">
+
 <h3>Cement Bag</h3>
-<div class="price">₹420</div>
-<p>UltraTech Cement</p>
 
-<div class="qty-box">
-<button onclick="decreaseQty('cement')">-</button>
-<input type="number" id="cement" value="1">
-<button onclick="increaseQty('cement')">+</button>
+<div class="price">
+₹420
 </div>
 
-<textarea id="cementNote"></textarea>
-
-<button class="btn"
-onclick="orderNow('Cement Bag','cement','cementNote')">
-Order Now
-</button>
-
-</div>
-</div>
-
-<div class="product">
-<img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=1200&auto=format&fit=crop">
-
-<div class="content">
-<h3>TMT Sariya</h3>
-<div class="price">₹65/kg</div>
-<p>Strong steel bars</p>
-
-<div class="qty-box">
-<button onclick="decreaseQty('sariya')">-</button>
-<input type="number" id="sariya" value="1">
-<button onclick="increaseQty('sariya')">+</button>
-</div>
-
-<textarea id="sariyaNote"></textarea>
-
-<button class="btn"
-onclick="orderNow('TMT Sariya','sariya','sariyaNote')">
-Order Now
-</button>
-
-</div>
-</div>
-
-</div>
-</section>
-
-<!-- Home -->
-
-<section class="section">
-<h2>🏠 Home Essentials</h2>
-
-<div class="products">
-
-<div class="product">
-<img src="https://images.unsplash.com/photo-1626806787461-102c1bfaaea1?q=80&w=1200&auto=format&fit=crop">
-
-<div class="content">
-<h3>Detergent Powder</h3>
-<div class="price">₹120</div>
-<p>Clothes washing powder</p>
-
-<div class="qty-box">
-<button onclick="decreaseQty('detergent')">-</button>
-<input type="number" id="detergent" value="1">
-<button onclick="increaseQty('detergent')">+</button>
-</div>
-
-<textarea id="detergentNote"></textarea>
-
-<button class="btn"
-onclick="orderNow('Detergent Powder','detergent','detergentNote')">
-Order Now
+<button class="add-btn"
+onclick="addToCart('Cement Bag',420)">
+Add To Cart
 </button>
 
 </div>
@@ -500,86 +242,164 @@ Order Now
 <img src="https://images.unsplash.com/photo-1563453392212-326f5e854473?q=80&w=1200&auto=format&fit=crop">
 
 <div class="content">
-<h3>Floor Cleaner</h3>
-<div class="price">₹95</div>
-<p>Home cleaning liquid</p>
 
-<div class="qty-box">
-<button onclick="decreaseQty('cleaner')">-</button>
-<input type="number" id="cleaner" value="1">
-<button onclick="increaseQty('cleaner')">+</button>
+<h3>Floor Cleaner</h3>
+
+<div class="price">
+₹95
 </div>
 
-<textarea id="cleanerNote"></textarea>
-
-<button class="btn"
-onclick="orderNow('Floor Cleaner','cleaner','cleanerNote')">
-Order Now
+<button class="add-btn"
+onclick="addToCart('Floor Cleaner',95)">
+Add To Cart
 </button>
 
 </div>
 </div>
 
 </div>
-</section>
+</div>
 
-<!-- Features -->
+<div class="cart" id="cart">
 
-<section class="section">
-<h2>Why KheriMart?</h2>
+<button class="close"
+onclick="closeCart()">
+Close
+</button>
 
-<div class="features">
+<h2>Your Cart</h2>
 
-<div class="feature">⚡ Fast Delivery</div>
-<div class="feature">🏪 Trusted Local Shops</div>
-<div class="feature">💵 Cash on Delivery</div>
-<div class="feature">📦 Same Day Delivery</div>
+<div id="cartItems"></div>
+
+<input type="text"
+id="customerName"
+placeholder="Your Name">
+
+<input type="text"
+id="customerPhone"
+placeholder="Mobile Number">
+
+<textarea
+id="customerAddress"
+placeholder="Full Address"></textarea>
+
+<button class="checkout"
+onclick="checkout()">
+Order on WhatsApp
+</button>
 
 </div>
-</section>
-
-<footer>
-
-<h2>KheriMart</h2>
-
-<p>Lakhimpur Kheri, Uttar Pradesh</p>
-
-<p>📞 9555153856</p>
-
-<p>© 2026 KheriMart</p>
-
-</footer>
-
-<a class="whatsapp"
-href="https://wa.me/919555153856">
-💬
-</a>
 
 <script>
 
-function increaseQty(id){
-let input=document.getElementById(id);
-input.value=parseInt(input.value)+1;
+let cart=[];
+
+function addToCart(name,price){
+
+let found=cart.find(item=>item.name===name);
+
+if(found){
+found.qty++;
+}else{
+cart.push({
+name:name,
+price:price,
+qty:1
+});
 }
 
-function decreaseQty(id){
-let input=document.getElementById(id);
-
-if(parseInt(input.value)>1){
-input.value=parseInt(input.value)-1;
-}
+updateCart();
 }
 
-function orderNow(product,qtyId,noteId){
+function updateCart(){
 
-let qty=document.getElementById(qtyId).value;
-let note=document.getElementById(noteId).value;
+document.getElementById("cartCount").innerText=
+cart.reduce((a,b)=>a+b.qty,0);
+
+let html="";
+
+cart.forEach((item,index)=>{
+
+html+=`
+
+<div class="cart-item">
+
+<div>
+<b>${item.name}</b><br>
+₹${item.price}
+</div>
+
+<div class="qty">
+
+<button onclick="decrease(${index})">-</button>
+
+<span>${item.qty}</span>
+
+<button onclick="increase(${index})">+</button>
+
+</div>
+
+</div>
+
+`;
+
+});
+
+document.getElementById("cartItems").innerHTML=html;
+}
+
+function increase(index){
+cart[index].qty++;
+updateCart();
+}
+
+function decrease(index){
+
+if(cart[index].qty>1){
+cart[index].qty--;
+}else{
+cart.splice(index,1);
+}
+
+updateCart();
+}
+
+function openCart(){
+document.getElementById("cart").style.display="block";
+}
+
+function closeCart(){
+document.getElementById("cart").style.display="none";
+}
+
+function checkout(){
+
+let name=
+document.getElementById("customerName").value;
+
+let phone=
+document.getElementById("customerPhone").value;
+
+let address=
+document.getElementById("customerAddress").value;
 
 let message=
-"KheriMart Order%0A%0A"+
-"Product: "+product+"%0A"+
-"Quantity: "+qty+"%0A"+
-"Customer Details: "+note;
+"KheriMart Order%0A%0A";
+
+cart.forEach(item=>{
+
+message+=
+item.name+
+" x "+
+item.qty+
+"%0A";
+
+});
+
+message+=
+"%0AName: "+name+
+"%0APhone: "+phone+
+"%0AAddress: "+address;
 
 window.open(
 "https://wa.me/919555153856?text="+message,
