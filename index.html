@@ -22,11 +22,10 @@ align-items:center;
 color:white;
 position:sticky;
 top:0;
-z-index:1000;
 }
 
 .logo{
-font-size:35px;
+font-size:40px;
 font-weight:bold;
 }
 
@@ -38,20 +37,20 @@ background:white;
 .search input{
 width:100%;
 padding:15px;
+font-size:18px;
 border-radius:12px;
 border:1px solid #ccc;
-font-size:18px;
 }
 
 .banner{
 background:orange;
-padding:50px 20px;
+padding:60px 20px;
 text-align:center;
 color:white;
 }
 
 .banner h1{
-font-size:45px;
+font-size:42px;
 margin-bottom:20px;
 }
 
@@ -66,7 +65,7 @@ color:white;
 border:none;
 padding:15px 30px;
 font-size:22px;
-border-radius:10px;
+border-radius:12px;
 }
 
 .section{
@@ -74,7 +73,7 @@ padding:20px;
 }
 
 .section h2{
-font-size:35px;
+font-size:36px;
 margin-bottom:20px;
 }
 
@@ -86,12 +85,13 @@ gap:15px;
 
 .cat{
 background:white;
-padding:20px;
+padding:25px;
 border-radius:15px;
 text-align:center;
 font-size:22px;
 font-weight:bold;
 box-shadow:0 2px 10px rgba(0,0,0,0.1);
+cursor:pointer;
 }
 
 .products{
@@ -118,12 +118,12 @@ padding:15px;
 }
 
 .content h3{
-font-size:20px;
+font-size:24px;
 margin-bottom:10px;
 }
 
 .price{
-font-size:25px;
+font-size:28px;
 color:#1f7a3d;
 font-weight:bold;
 margin-bottom:10px;
@@ -132,24 +132,24 @@ margin-bottom:10px;
 .old{
 text-decoration:line-through;
 color:gray;
-font-size:16px;
+font-size:18px;
 margin-left:10px;
 }
 
 .delivery{
 color:green;
-font-size:15px;
-margin-bottom:10px;
+font-size:16px;
+margin-bottom:15px;
 }
 
 .btn{
 width:100%;
 background:#1f7a3d;
 color:white;
-padding:14px;
+padding:15px;
+font-size:20px;
 border:none;
-border-radius:10px;
-font-size:18px;
+border-radius:12px;
 font-weight:bold;
 }
 
@@ -159,9 +159,9 @@ bottom:20px;
 right:20px;
 background:#ff9800;
 color:white;
-padding:18px;
+padding:18px 24px;
 border-radius:50px;
-font-size:20px;
+font-size:22px;
 font-weight:bold;
 box-shadow:0 2px 10px rgba(0,0,0,0.3);
 }
@@ -175,7 +175,7 @@ margin-top:30px;
 }
 
 footer h2{
-font-size:35px;
+font-size:36px;
 margin-bottom:15px;
 }
 
@@ -190,19 +190,33 @@ margin-bottom:10px;
 <body>
 
 <header>
-<div class="logo">KheriMart</div>
-<div>☰</div>
+
+<div class="logo">
+KheriMart
+</div>
+
+<div style="font-size:35px;">
+☰
+</div>
+
 </header>
 
 <div class="search">
-<input type="text" placeholder="Search grocery, medicines, electronics...">
+
+<input type="text"
+placeholder="Search grocery, medicines, electronics...">
+
 </div>
 
 <section class="banner">
 
-<h1>Lakhimpur Kheri Ka Online Bazaar</h1>
+<h1>
+Lakhimpur Kheri Ka Online Bazaar
+</h1>
 
-<p>Fast delivery • Local shops • COD Available</p>
+<p>
+Fast delivery • Local shops • COD Available
+</p>
 
 <button>
 Order Now
@@ -216,17 +230,35 @@ Order Now
 
 <div class="categories">
 
-<div class="cat">🛒 Grocery</div>
+<div class="cat"
+onclick="openCategory('Grocery')">
+🛒 Grocery
+</div>
 
-<div class="cat">🥦 Vegetables</div>
+<div class="cat"
+onclick="openCategory('Vegetables')">
+🥦 Vegetables
+</div>
 
-<div class="cat">💊 Medicines</div>
+<div class="cat"
+onclick="openCategory('Medicines')">
+💊 Medicines
+</div>
 
-<div class="cat">📱 Electronics</div>
+<div class="cat"
+onclick="openCategory('Electronics')">
+📱 Electronics
+</div>
 
-<div class="cat">🏗 Construction</div>
+<div class="cat"
+onclick="openCategory('Construction')">
+🏗 Construction
+</div>
 
-<div class="cat">🏠 Home Essentials</div>
+<div class="cat"
+onclick="openCategory('Home Essentials')">
+🏠 Home Essentials
+</div>
 
 </div>
 
@@ -255,7 +287,8 @@ Order Now
 ⚡ Delivery in 30 mins
 </div>
 
-<button class="btn">
+<button class="btn"
+onclick="addToCart('Basmati Rice',120)">
 Add To Cart
 </button>
 
@@ -278,7 +311,8 @@ Add To Cart
 ⚡ Delivery in 25 mins
 </div>
 
-<button class="btn">
+<button class="btn"
+onclick="addToCart('Cooking Oil',160)">
 Add To Cart
 </button>
 
@@ -301,7 +335,8 @@ Add To Cart
 ⚡ Delivery in 20 mins
 </div>
 
-<button class="btn">
+<button class="btn"
+onclick="addToCart('Paracetamol',35)">
 Add To Cart
 </button>
 
@@ -324,7 +359,8 @@ Add To Cart
 ⚡ Delivery in 2 hours
 </div>
 
-<button class="btn">
+<button class="btn"
+onclick="addToCart('Smartphone',10999)">
 Add To Cart
 </button>
 
@@ -376,8 +412,34 @@ Add To Cart
 </footer>
 
 <div class="cart-btn">
-🛒 Cart
+🛒 Cart (0)
 </div>
+
+<script>
+
+let cart = [];
+
+function addToCart(name,price){
+
+cart.push({
+name:name,
+price:price
+});
+
+document.querySelector(".cart-btn").innerHTML =
+"🛒 Cart (" + cart.length + ")";
+
+alert(name + " added to cart");
+
+}
+
+function openCategory(category){
+
+alert(category + " category opened");
+
+}
+
+</script>
 
 </body>
 </html>
