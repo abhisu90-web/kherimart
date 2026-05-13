@@ -6,7 +6,6 @@
 <title>KheriMart</title>
 
 <style>
-
 *{
 margin:0;
 padding:0;
@@ -20,53 +19,52 @@ color:#222;
 }
 
 header{
-background:#1f6b45;
-padding:15px 20px;
+background:#1f6f43;
+padding:18px;
 display:flex;
 justify-content:space-between;
 align-items:center;
 position:sticky;
 top:0;
-z-index:100;
+z-index:1000;
 }
 
 .logo{
-font-size:34px;
+font-size:28px;
 font-weight:bold;
-color:#ff9800;
+color:#ffa500;
 }
 
 .menu{
+font-size:30px;
 color:white;
-font-size:28px;
 }
 
 .hero{
 background:#ff9800;
-padding:70px 20px;
-text-align:center;
 color:white;
+text-align:center;
+padding:70px 20px;
 }
 
 .hero h1{
-font-size:42px;
+font-size:48px;
 margin-bottom:20px;
 }
 
 .hero p{
-font-size:20px;
+font-size:22px;
 margin-bottom:30px;
 }
 
-.btn{
-background:#1f6b45;
+.hero button{
+background:#1f6f43;
 color:white;
-padding:16px 30px;
-border-radius:12px;
-text-decoration:none;
-font-size:20px;
+padding:18px 40px;
+border:none;
+border-radius:10px;
+font-size:22px;
 font-weight:bold;
-display:inline-block;
 }
 
 .section{
@@ -74,93 +72,90 @@ padding:40px 20px;
 }
 
 .section h2{
-font-size:34px;
+font-size:36px;
 margin-bottom:25px;
 }
 
 .grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
 gap:20px;
 }
 
 .card{
 background:white;
 padding:25px;
-border-radius:18px;
-box-shadow:0 3px 10px rgba(0,0,0,0.1);
+border-radius:15px;
+box-shadow:0 2px 10px rgba(0,0,0,0.1);
 text-align:center;
 transition:0.3s;
 }
 
 .card:hover{
-transform:scale(1.05);
+transform:translateY(-5px);
 }
 
 .card h3{
-margin-top:10px;
-font-size:22px;
+font-size:28px;
+margin-bottom:10px;
 }
 
-.products{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:25px;
+.card p{
+font-size:18px;
+color:#555;
 }
 
 .product{
 background:white;
 padding:20px;
-border-radius:18px;
-box-shadow:0 3px 10px rgba(0,0,0,0.1);
-text-align:center;
-}
-
-.product img{
-width:100%;
-height:180px;
-object-fit:cover;
-border-radius:12px;
+border-radius:15px;
+margin-bottom:20px;
+box-shadow:0 2px 10px rgba(0,0,0,0.1);
 }
 
 .product h3{
-margin:15px 0 10px;
-font-size:24px;
+font-size:28px;
+margin-bottom:10px;
+}
+
+.product p{
+font-size:18px;
+margin-bottom:10px;
 }
 
 .price{
-font-size:22px;
-color:#1f6b45;
+font-size:24px;
 font-weight:bold;
+color:#1f6f43;
 margin-bottom:15px;
 }
 
-.order-btn{
+.btn{
 display:inline-block;
-padding:12px 22px;
-background:#25D366;
+background:#1f6f43;
 color:white;
-text-decoration:none;
+padding:12px 25px;
 border-radius:10px;
-font-weight:bold;
+text-decoration:none;
+font-size:18px;
 }
 
 footer{
 background:#111;
 color:white;
-padding:40px 20px;
 text-align:center;
-margin-top:50px;
+padding:40px 20px;
+margin-top:40px;
 }
 
 footer h2{
 font-size:36px;
-margin-bottom:15px;
+margin-bottom:20px;
 }
 
 footer p{
-margin:8px 0;
-font-size:18px;
+font-size:20px;
+margin-bottom:10px;
 }
 
 .whatsapp{
@@ -168,18 +163,21 @@ position:fixed;
 bottom:20px;
 right:20px;
 background:#25D366;
+color:white;
 width:70px;
 height:70px;
+border-radius:50%;
 display:flex;
 justify-content:center;
 align-items:center;
-border-radius:50%;
-font-size:34px;
+font-size:35px;
 text-decoration:none;
-color:white;
-box-shadow:0 3px 10px rgba(0,0,0,0.3);
+box-shadow:0 2px 10px rgba(0,0,0,0.3);
 }
 
+html{
+scroll-behavior:smooth;
+}
 </style>
 </head>
 
@@ -192,155 +190,195 @@ box-shadow:0 3px 10px rgba(0,0,0,0.3);
 
 <section class="hero">
 <h1>Lakhimpur Kheri Ka Apna Online Bazaar</h1>
+<p>Sabzi, grocery, medicines, electronics aur daily use saman ab ghar tak.</p>
 
-<p>
-Groceries, medicines, electronics aur ghar ka saman ab ghar tak delivery.
-</p>
-
-<a class="btn"
-href="https://wa.me/917007733078">
-WhatsApp Order Kare
+<a href="https://wa.me/917007733078">
+<button>Order on WhatsApp</button>
 </a>
-
 </section>
 
 <section class="section">
-
 <h2>Popular Categories</h2>
 
 <div class="grid">
 
-<section class="section" id="grocery">
+<a href="#grocery" style="text-decoration:none;color:black;">
+<div class="card">
 <h3>🛒 Grocery</h3>
-<p>Daily needs saman</p>
+<p>Daily use saman</p>
+</div>
 </a>
 
-<section class="section" id="vegetables">
+<a href="#vegetables" style="text-decoration:none;color:black;">
+<div class="card">
 <h3>🥦 Vegetables</h3>
 <p>Fresh sabziyan</p>
+</div>
 </a>
 
-<section class="section" id="medicines">
+<a href="#medicines" style="text-decoration:none;color:black;">
+<div class="card">
 <h3>💊 Medicines</h3>
 <p>Medical store delivery</p>
+</div>
 </a>
-<section class="section" id="electronics">
+
+<a href="#electronics" style="text-decoration:none;color:black;">
+<div class="card">
 <h3>📱 Electronics</h3>
 <p>Mobile aur gadgets</p>
+</div>
 </a>
 
-<section class="section" id="construction">
+<a href="#construction" style="text-decoration:none;color:black;">
+<div class="card">
 <h3>🏗 Construction</h3>
 <p>Building material</p>
+</div>
 </a>
 
-<section class="section" id="home">
+<a href="#home" style="text-decoration:none;color:black;">
+<div class="card">
 <h3>🏠 Home Essentials</h3>
 <p>Daily use products</p>
+</div>
 </a>
 
 </div>
-
 </section>
 
 <section class="section" id="grocery">
-
-<h2>Trending Products</h2>
-
-<div class="products">
+<h2>🛒 Grocery Items</h2>
 
 <div class="product">
-
-<img src="https://images.unsplash.com/photo-1586201375761-83865001e31c?q=80&w=1200&auto=format&fit=crop">
-
 <h3>Aashirvaad Atta</h3>
-
-<div class="price">₹320</div>
-
-<a class="order-btn"
-href="https://wa.me/917007733078?text=I%20want%20to%20order%20Aashirvaad%20Atta">
-Order Now
-</a>
-
+<p>10kg Pack</p>
+<div class="price">₹420</div>
+<a class="btn" href="https://wa.me/917007733078?text=I want to order Aashirvaad Atta">Order Now</a>
 </div>
 
 <div class="product">
-
-<img src="https://images.unsplash.com/photo-1542838132-92c53300491e?q=80&w=1200&auto=format&fit=crop">
+<h3>Fortune Oil</h3>
+<p>1 Litre</p>
+<div class="price">₹160</div>
+<a class="btn" href="https://wa.me/917007733078?text=I want to order Fortune Oil">Order Now</a>
+</div>
+</section>
 
 <section class="section" id="vegetables">
+<h2>🥦 Fresh Vegetables</h2>
 
-<div class="price">₹40/kg</div>
-
-<a class="order-btn"
-href="https://wa.me/917007733078?text=I%20want%20Fresh%20Vegetables">
-Order Now
-</a>
-
+<div class="product">
+<h3>Potato</h3>
+<p>Fresh aloo</p>
+<div class="price">₹25/kg</div>
+<a class="btn" href="https://wa.me/917007733078?text=I want Potato">Order Now</a>
 </div>
 
 <div class="product">
-
-<img src="https://images.unsplash.com/photo-1580910051074-3eb694886505?q=80&w=1200&auto=format&fit=crop">
+<h3>Tomato</h3>
+<p>Taza tamatar</p>
+<div class="price">₹40/kg</div>
+<a class="btn" href="https://wa.me/917007733078?text=I want Tomato">Order Now</a>
+</div>
+</section>
 
 <section class="section" id="medicines">
+<h2>💊 Medicines</h2>
 
-<div class="price">Fast Delivery</div>
-
-<a class="order-btn"
-href="https://wa.me/917007733078?text=I%20want%20Medicines">
-Order Now
-</a>
-
+<div class="product">
+<h3>Paracetamol</h3>
+<p>Fever medicine</p>
+<div class="price">₹35</div>
+<a class="btn" href="https://wa.me/917007733078?text=I want Paracetamol">Order Now</a>
 </div>
 
 <div class="product">
-
-<img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?q=80&w=1200&auto=format&fit=crop">
+<h3>Cough Syrup</h3>
+<p>Cold and cough</p>
+<div class="price">₹120</div>
+<a class="btn" href="https://wa.me/917007733078?text=I want Cough Syrup">Order Now</a>
+</div>
+</section>
 
 <section class="section" id="electronics">
+<h2>📱 Electronics</h2>
 
-<div class="price">Best Price</div>
-
-<a class="order-btn"
-href="https://wa.me/917007733078?text=I%20want%20Smartphones">
-Order Now
-</a>
-
+<div class="product">
+<h3>Bluetooth Speaker</h3>
+<p>Loud sound speaker</p>
+<div class="price">₹899</div>
+<a class="btn" href="https://wa.me/917007733078?text=I want Bluetooth Speaker">Order Now</a>
 </div>
 
+<div class="product">
+<h3>USB Charger</h3>
+<p>Fast charging adapter</p>
+<div class="price">₹299</div>
+<a class="btn" href="https://wa.me/917007733078?text=I want USB Charger">Order Now</a>
+</div>
+</section>
+
+<section class="section" id="construction">
+<h2>🏗 Construction Materials</h2>
+
+<div class="product">
+<h3>Cement Bag</h3>
+<p>UltraTech Cement</p>
+<div class="price">₹420</div>
+<a class="btn" href="https://wa.me/917007733078?text=I want Cement Bag">Order Now</a>
 </div>
 
+<div class="product">
+<h3>TMT Sariya</h3>
+<p>Strong steel bars</p>
+<div class="price">₹65/kg</div>
+<a class="btn" href="https://wa.me/917007733078?text=I want TMT Sariya">Order Now</a>
+</div>
+</section>
+
+<section class="section" id="home">
+<h2>🏠 Home Essentials</h2>
+
+<div class="product">
+<h3>Detergent Powder</h3>
+<p>Clothes washing powder</p>
+<div class="price">₹120</div>
+<a class="btn" href="https://wa.me/917007733078?text=I want Detergent Powder">Order Now</a>
+</div>
+
+<div class="product">
+<h3>Floor Cleaner</h3>
+<p>Home cleaning liquid</p>
+<div class="price">₹95</div>
+<a class="btn" href="https://wa.me/917007733078?text=I want Floor Cleaner">Order Now</a>
+</div>
 </section>
 
 <section class="section">
-
 <h2>Why KheriMart?</h2>
 
 <div class="grid">
 
 <div class="card">
 <h3>⚡ Fast Delivery</h3>
+<p>Quick home delivery</p>
 </div>
 
 <div class="card">
 <h3>🏪 Local Trusted Shops</h3>
+<p>Kheri ke reliable dukaan</p>
 </div>
 
 <div class="card">
-<h3>💵 Cash On Delivery</h3>
-</div>
-
-<div class="card">
-<h3>📞 WhatsApp Support</h3>
+<h3>💵 Cash on Delivery</h3>
+<p>COD available</p>
 </div>
 
 </div>
-
 </section>
 
 <footer>
-
 <h2>KheriMart</h2>
 
 <p>Lakhimpur Kheri, Uttar Pradesh</p>
@@ -350,11 +388,9 @@ Order Now
 <p>Hyperlocal Delivery Marketplace</p>
 
 <p>© 2026 KheriMart</p>
-
 </footer>
 
-<a class="whatsapp"
-href="https://wa.me/917007733078">
+<a class="whatsapp" href="https://wa.me/917007733078">
 💬
 </a>
 
