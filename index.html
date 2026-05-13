@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,13 +9,13 @@
 
 body{
 margin:0;
-font-family:Arial;
+font-family:Arial,sans-serif;
 background:#f5f5f5;
 }
 
 header{
 background:#1f7a3d;
-padding:15px;
+padding:15px 20px;
 display:flex;
 justify-content:space-between;
 align-items:center;
@@ -30,28 +30,48 @@ font-size:38px;
 font-weight:bold;
 }
 
+.menu{
+font-size:35px;
+}
+
 .search{
-padding:15px;
 background:white;
+padding:15px;
 }
 
 .search input{
 width:100%;
 padding:15px;
+font-size:18px;
 border-radius:12px;
 border:1px solid #ccc;
-font-size:18px;
 }
 
 .banner{
 background:orange;
-padding:50px 20px;
-text-align:center;
 color:white;
+padding:60px 20px;
+text-align:center;
 }
 
 .banner h1{
-font-size:42px;
+font-size:46px;
+margin-bottom:20px;
+}
+
+.banner p{
+font-size:22px;
+margin-bottom:25px;
+}
+
+.banner button{
+background:#1f7a3d;
+color:white;
+border:none;
+padding:15px 30px;
+font-size:22px;
+border-radius:12px;
+font-weight:bold;
 }
 
 .section{
@@ -59,7 +79,25 @@ padding:20px;
 }
 
 .section h2{
-font-size:34px;
+font-size:38px;
+margin-bottom:20px;
+}
+
+.categories{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:15px;
+}
+
+.cat{
+background:white;
+padding:25px;
+border-radius:16px;
+font-size:22px;
+font-weight:bold;
+text-align:center;
+box-shadow:0 2px 10px rgba(0,0,0,0.1);
+cursor:pointer;
 }
 
 .products{
@@ -85,10 +123,29 @@ object-fit:cover;
 padding:15px;
 }
 
+.content h3{
+font-size:24px;
+margin-bottom:10px;
+}
+
 .price{
-font-size:28px;
-color:green;
+font-size:30px;
 font-weight:bold;
+color:green;
+margin-bottom:10px;
+}
+
+.old{
+font-size:18px;
+text-decoration:line-through;
+color:gray;
+margin-left:10px;
+}
+
+.delivery{
+font-size:16px;
+color:green;
+margin-bottom:15px;
 }
 
 .btn{
@@ -96,11 +153,10 @@ width:100%;
 background:#1f7a3d;
 color:white;
 padding:14px;
+font-size:20px;
 border:none;
-border-radius:10px;
-font-size:18px;
+border-radius:12px;
 font-weight:bold;
-margin-top:10px;
 }
 
 .cart-btn{
@@ -109,11 +165,12 @@ bottom:20px;
 right:20px;
 background:#ff9800;
 color:white;
-padding:18px;
+padding:18px 24px;
 border-radius:50px;
 font-size:22px;
 font-weight:bold;
 z-index:1000;
+box-shadow:0 2px 10px rgba(0,0,0,0.3);
 }
 
 .cart-box{
@@ -129,9 +186,15 @@ overflow:auto;
 transition:0.4s;
 }
 
+.close{
+font-size:35px;
+float:right;
+cursor:pointer;
+}
+
 .cart-item{
-border-bottom:1px solid #ddd;
 padding:15px 0;
+border-bottom:1px solid #ddd;
 }
 
 .qty{
@@ -142,32 +205,38 @@ margin-top:10px;
 }
 
 .qty button{
-padding:5px 12px;
+padding:5px 14px;
 font-size:18px;
 }
 
 .checkout{
 background:green;
 color:white;
-padding:15px;
+padding:16px;
 width:100%;
 border:none;
 font-size:22px;
 border-radius:12px;
 margin-top:20px;
-}
-
-.close{
-font-size:30px;
-float:right;
+font-weight:bold;
 }
 
 footer{
 background:#111;
 color:white;
-padding:40px;
+padding:40px 20px;
 text-align:center;
 margin-top:30px;
+}
+
+footer h2{
+font-size:38px;
+margin-bottom:15px;
+}
+
+footer p{
+font-size:18px;
+margin-bottom:10px;
 }
 
 </style>
@@ -181,7 +250,7 @@ margin-top:30px;
 KheriMart
 </div>
 
-<div style="font-size:35px;">
+<div class="menu">
 ☰
 </div>
 
@@ -190,29 +259,73 @@ KheriMart
 <div class="search">
 
 <input type="text"
-placeholder="Search grocery, medicines, electronics">
+placeholder="Search grocery, medicines, electronics...">
 
 </div>
 
 <section class="banner">
 
 <h1>
-Lakhimpur Kheri Ka Online Bazaar
+Lakhimpur Kheri Ka Apna Online Bazaar
 </h1>
 
 <p>
-Fast delivery • COD Available
+Groceries, medicines, electronics aur daily needs ab ghar tak.
 </p>
+
+<button>
+Order Now
+</button>
 
 </section>
 
 <section class="section">
 
-<h2>🛒 Grocery Items</h2>
+<h2>Popular Categories</h2>
+
+<div class="categories">
+
+<div class="cat"
+onclick="showCategory('grocery')">
+🛒 Grocery
+</div>
+
+<div class="cat"
+onclick="showCategory('vegetables')">
+🥦 Vegetables
+</div>
+
+<div class="cat"
+onclick="showCategory('medicines')">
+💊 Medicines
+</div>
+
+<div class="cat"
+onclick="showCategory('electronics')">
+📱 Electronics
+</div>
+
+<div class="cat"
+onclick="showCategory('construction')">
+🏗 Construction
+</div>
+
+<div class="cat"
+onclick="showCategory('home')">
+🏠 Home Essentials
+</div>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2>🔥 Trending Products</h2>
 
 <div class="products">
 
-<div class="product">
+<div class="product grocery">
 
 <img src="https://images.unsplash.com/photo-1586201375761-83865001e31c?q=80&w=1200&auto=format&fit=crop">
 
@@ -222,6 +335,11 @@ Fast delivery • COD Available
 
 <div class="price">
 ₹120
+<span class="old">₹150</span>
+</div>
+
+<div class="delivery">
+⚡ Delivery in 30 mins
 </div>
 
 <button class="btn"
@@ -232,9 +350,9 @@ Add To Cart
 </div>
 </div>
 
-<div class="product">
+<div class="product grocery">
 
-<img src="https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?q=80&w=1200&auto=format&fit=crop">
+<img src="https://images.unsplash.com/photo-1607301405390-d831c242f59b?q=80&w=1200&auto=format&fit=crop">
 
 <div class="content">
 
@@ -242,6 +360,10 @@ Add To Cart
 
 <div class="price">
 ₹160
+</div>
+
+<div class="delivery">
+⚡ Delivery in 25 mins
 </div>
 
 <button class="btn"
@@ -252,7 +374,7 @@ Add To Cart
 </div>
 </div>
 
-<div class="product">
+<div class="product medicines">
 
 <img src="https://images.unsplash.com/photo-1587854692152-cbe660dbde88?q=80&w=1200&auto=format&fit=crop">
 
@@ -264,6 +386,10 @@ Add To Cart
 ₹35
 </div>
 
+<div class="delivery">
+⚡ Delivery in 20 mins
+</div>
+
 <button class="btn"
 onclick="addToCart('Paracetamol',35)">
 Add To Cart
@@ -272,7 +398,31 @@ Add To Cart
 </div>
 </div>
 
-<div class="product">
+<div class="product medicines">
+
+<img src="https://images.unsplash.com/photo-1471864190281-a93a3070b6de?q=80&w=1200&auto=format&fit=crop">
+
+<div class="content">
+
+<h3>Cough Syrup</h3>
+
+<div class="price">
+₹120
+</div>
+
+<div class="delivery">
+⚡ Delivery in 20 mins
+</div>
+
+<button class="btn"
+onclick="addToCart('Cough Syrup',120)">
+Add To Cart
+</button>
+
+</div>
+</div>
+
+<div class="product electronics">
 
 <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?q=80&w=1200&auto=format&fit=crop">
 
@@ -284,8 +434,132 @@ Add To Cart
 ₹10999
 </div>
 
+<div class="delivery">
+⚡ Delivery in 2 hours
+</div>
+
 <button class="btn"
 onclick="addToCart('Smartphone',10999)">
+Add To Cart
+</button>
+
+</div>
+</div>
+
+<div class="product electronics">
+
+<img src="https://images.unsplash.com/photo-1546435770-a3e426bf472b?q=80&w=1200&auto=format&fit=crop">
+
+<div class="content">
+
+<h3>Bluetooth Speaker</h3>
+
+<div class="price">
+₹899
+</div>
+
+<div class="delivery">
+⚡ Delivery in 1 hour
+</div>
+
+<button class="btn"
+onclick="addToCart('Bluetooth Speaker',899)">
+Add To Cart
+</button>
+
+</div>
+</div>
+
+<div class="product construction">
+
+<img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=1200&auto=format&fit=crop">
+
+<div class="content">
+
+<h3>Cement Bag</h3>
+
+<div class="price">
+₹420
+</div>
+
+<div class="delivery">
+⚡ Delivery in same day
+</div>
+
+<button class="btn"
+onclick="addToCart('Cement Bag',420)">
+Add To Cart
+</button>
+
+</div>
+</div>
+
+<div class="product construction">
+
+<img src="https://images.unsplash.com/photo-1599707254554-027aeb4deacd?q=80&w=1200&auto=format&fit=crop">
+
+<div class="content">
+
+<h3>TMT Sariya</h3>
+
+<div class="price">
+₹65/kg
+</div>
+
+<div class="delivery">
+⚡ Delivery in same day
+</div>
+
+<button class="btn"
+onclick="addToCart('TMT Sariya',65)">
+Add To Cart
+</button>
+
+</div>
+</div>
+
+<div class="product home">
+
+<img src="https://images.unsplash.com/photo-1583947582886-f40ec95dd752?q=80&w=1200&auto=format&fit=crop">
+
+<div class="content">
+
+<h3>Detergent Powder</h3>
+
+<div class="price">
+₹120
+</div>
+
+<div class="delivery">
+⚡ Delivery in 25 mins
+</div>
+
+<button class="btn"
+onclick="addToCart('Detergent Powder',120)">
+Add To Cart
+</button>
+
+</div>
+</div>
+
+<div class="product home">
+
+<img src="https://images.unsplash.com/photo-1563453392212-326f5e854473?q=80&w=1200&auto=format&fit=crop">
+
+<div class="content">
+
+<h3>Floor Cleaner</h3>
+
+<div class="price">
+₹95
+</div>
+
+<div class="delivery">
+⚡ Delivery in 25 mins
+</div>
+
+<button class="btn"
+onclick="addToCart('Floor Cleaner',95)">
 Add To Cart
 </button>
 
@@ -296,20 +570,50 @@ Add To Cart
 
 </section>
 
+<section class="section">
+
+<h2>Why KheriMart?</h2>
+
+<div class="categories">
+
+<div class="cat">
+⚡ Fast Delivery
+</div>
+
+<div class="cat">
+🏪 Trusted Local Shops
+</div>
+
+<div class="cat">
+💵 Cash on Delivery
+</div>
+
+<div class="cat">
+📦 Same Day Delivery
+</div>
+
+</div>
+
+</section>
+
 <footer>
 
 <h2>KheriMart</h2>
 
-<p>Lakhimpur Kheri</p>
+<p>Lakhimpur Kheri, Uttar Pradesh</p>
 
 <p>📞 9555153856</p>
+
+<p>Hyperlocal Delivery Marketplace</p>
+
+<p>© 2026 KheriMart</p>
 
 </footer>
 
 <div class="cart-btn"
 onclick="openCart()">
 
-🛒 <span id="count">0</span>
+🛒 Cart (<span id="count">0</span>)
 
 </div>
 
@@ -463,6 +767,31 @@ item.qty +
 window.open(
 "https://wa.me/919555153856?text="+msg
 );
+
+}
+
+function showCategory(category){
+
+let products =
+document.querySelectorAll(".product");
+
+products.forEach(product=>{
+
+product.style.display = "none";
+
+});
+
+document.querySelectorAll("." + category)
+.forEach(item=>{
+
+item.style.display = "block";
+
+});
+
+window.scrollTo({
+top:700,
+behavior:'smooth'
+});
 
 }
 
