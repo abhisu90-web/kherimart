@@ -6,78 +6,161 @@
 <title>KheriMart</title>
 
 <style>
-body{
+
+*{
 margin:0;
+padding:0;
+box-sizing:border-box;
 font-family:Arial,sans-serif;
+}
+
+body{
 background:#f5f5f5;
+color:#222;
 }
 
 header{
 background:#1f6b45;
-color:white;
-padding:15px;
+padding:15px 20px;
 display:flex;
 justify-content:space-between;
 align-items:center;
+position:sticky;
+top:0;
+z-index:100;
 }
 
 .logo{
-font-size:32px;
+font-size:34px;
 font-weight:bold;
 color:#ff9800;
 }
 
+.menu{
+color:white;
+font-size:28px;
+}
+
 .hero{
 background:#ff9800;
-padding:50px 20px;
+padding:70px 20px;
 text-align:center;
 color:white;
 }
 
 .hero h1{
-font-size:40px;
-margin-bottom:10px;
+font-size:42px;
+margin-bottom:20px;
+}
+
+.hero p{
+font-size:20px;
+margin-bottom:30px;
 }
 
 .btn{
-display:inline-block;
-margin-top:20px;
-padding:14px 28px;
 background:#1f6b45;
+color:white;
+padding:16px 30px;
+border-radius:12px;
+text-decoration:none;
+font-size:20px;
+font-weight:bold;
+display:inline-block;
+}
+
+.section{
+padding:40px 20px;
+}
+
+.section h2{
+font-size:34px;
+margin-bottom:25px;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
+gap:20px;
+}
+
+.card{
+background:white;
+padding:25px;
+border-radius:18px;
+box-shadow:0 3px 10px rgba(0,0,0,0.1);
+text-align:center;
+transition:0.3s;
+}
+
+.card:hover{
+transform:scale(1.05);
+}
+
+.card h3{
+margin-top:10px;
+font-size:22px;
+}
+
+.products{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:25px;
+}
+
+.product{
+background:white;
+padding:20px;
+border-radius:18px;
+box-shadow:0 3px 10px rgba(0,0,0,0.1);
+text-align:center;
+}
+
+.product img{
+width:100%;
+height:180px;
+object-fit:cover;
+border-radius:12px;
+}
+
+.product h3{
+margin:15px 0 10px;
+font-size:24px;
+}
+
+.price{
+font-size:22px;
+color:#1f6b45;
+font-weight:bold;
+margin-bottom:15px;
+}
+
+.order-btn{
+display:inline-block;
+padding:12px 22px;
+background:#25D366;
 color:white;
 text-decoration:none;
 border-radius:10px;
 font-weight:bold;
 }
 
-.section{
-padding:30px 20px;
-}
-
-.section h2{
-margin-bottom:20px;
-}
-
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(140px,1fr));
-gap:15px;
-}
-
-.card{
-background:white;
-padding:20px;
-border-radius:15px;
-box-shadow:0 2px 10px rgba(0,0,0,0.1);
-text-align:center;
-}
-
 footer{
 background:#111;
 color:white;
-padding:25px;
+padding:40px 20px;
 text-align:center;
-margin-top:30px;
+margin-top:50px;
+}
+
+footer h2{
+font-size:36px;
+margin-bottom:15px;
+}
+
+footer p{
+margin:8px 0;
+font-size:18px;
 }
 
 .whatsapp{
@@ -85,12 +168,18 @@ position:fixed;
 bottom:20px;
 right:20px;
 background:#25D366;
-color:white;
-padding:15px 18px;
+width:70px;
+height:70px;
+display:flex;
+justify-content:center;
+align-items:center;
 border-radius:50%;
-font-size:24px;
+font-size:34px;
 text-decoration:none;
+color:white;
+box-shadow:0 3px 10px rgba(0,0,0,0.3);
 }
+
 </style>
 </head>
 
@@ -98,52 +187,177 @@ text-decoration:none;
 
 <header>
 <div class="logo">KheriMart</div>
-<div>☰</div>
+<div class="menu">☰</div>
 </header>
 
 <section class="hero">
 <h1>Lakhimpur Kheri Ka Apna Online Bazaar</h1>
-<p>Groceries, medicines, electronics aur daily needs ab ghar tak.</p>
 
-<a class="btn" href="https://wa.me/917007733078">
-Order on WhatsApp
+<p>
+Groceries, medicines, electronics aur ghar ka saman ab ghar tak delivery.
+</p>
+
+<a class="btn"
+href="https://wa.me/917007733078">
+WhatsApp Order Kare
 </a>
+
 </section>
 
 <section class="section">
+
 <h2>Popular Categories</h2>
 
 <div class="grid">
-<div class="card">🛒 Grocery</div>
-<div class="card">🥦 Vegetables</div>
-<div class="card">🥛 Dairy</div>
-<div class="card">💊 Medicines</div>
-<div class="card">📱 Electronics</div>
-<div class="card">🔧 Hardware</div>
-<div class="card">🏠 Home Essentials</div>
-<div class="card">🏗 Construction</div>
+
+<div class="card">
+<h3>🛒 Grocery</h3>
+<p>Daily needs saman</p>
 </div>
+
+<div class="card">
+<h3>🥦 Vegetables</h3>
+<p>Fresh sabziyan</p>
+</div>
+
+<div class="card">
+<h3>💊 Medicines</h3>
+<p>Medical store delivery</p>
+</div>
+
+<div class="card">
+<h3>📱 Electronics</h3>
+<p>Mobile aur gadgets</p>
+</div>
+
+<div class="card">
+<h3>🏗 Construction</h3>
+<p>Building material</p>
+</div>
+
+<div class="card">
+<h3>🏠 Home Essentials</h3>
+<p>Daily use products</p>
+</div>
+
+</div>
+
 </section>
 
 <section class="section">
+
+<h2>Trending Products</h2>
+
+<div class="products">
+
+<div class="product">
+
+<img src="https://images.unsplash.com/photo-1586201375761-83865001e31c?q=80&w=1200&auto=format&fit=crop">
+
+<h3>Aashirvaad Atta</h3>
+
+<div class="price">₹320</div>
+
+<a class="order-btn"
+href="https://wa.me/917007733078?text=I%20want%20to%20order%20Aashirvaad%20Atta">
+Order Now
+</a>
+
+</div>
+
+<div class="product">
+
+<img src="https://images.unsplash.com/photo-1542838132-92c53300491e?q=80&w=1200&auto=format&fit=crop">
+
+<h3>Fresh Vegetables</h3>
+
+<div class="price">₹40/kg</div>
+
+<a class="order-btn"
+href="https://wa.me/917007733078?text=I%20want%20Fresh%20Vegetables">
+Order Now
+</a>
+
+</div>
+
+<div class="product">
+
+<img src="https://images.unsplash.com/photo-1580910051074-3eb694886505?q=80&w=1200&auto=format&fit=crop">
+
+<h3>Medicines</h3>
+
+<div class="price">Fast Delivery</div>
+
+<a class="order-btn"
+href="https://wa.me/917007733078?text=I%20want%20Medicines">
+Order Now
+</a>
+
+</div>
+
+<div class="product">
+
+<img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?q=80&w=1200&auto=format&fit=crop">
+
+<h3>Smartphones</h3>
+
+<div class="price">Best Price</div>
+
+<a class="order-btn"
+href="https://wa.me/917007733078?text=I%20want%20Smartphones">
+Order Now
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="section">
+
 <h2>Why KheriMart?</h2>
 
 <div class="grid">
-<div class="card">⚡ Fast Delivery</div>
-<div class="card">🏪 Local Trusted Shops</div>
-<div class="card">💵 Cash on Delivery</div>
-<div class="card">📞 WhatsApp Support</div>
+
+<div class="card">
+<h3>⚡ Fast Delivery</h3>
 </div>
+
+<div class="card">
+<h3>🏪 Local Trusted Shops</h3>
+</div>
+
+<div class="card">
+<h3>💵 Cash On Delivery</h3>
+</div>
+
+<div class="card">
+<h3>📞 WhatsApp Support</h3>
+</div>
+
+</div>
+
 </section>
 
 <footer>
+
 <h2>KheriMart</h2>
+
 <p>Lakhimpur Kheri, Uttar Pradesh</p>
+
 <p>📞 7007733078 / 9555153856</p>
+
+<p>Hyperlocal Delivery Marketplace</p>
+
 <p>© 2026 KheriMart</p>
+
 </footer>
 
-<a class="whatsapp" href="https://wa.me/917007733078">💬</a>
+<a class="whatsapp"
+href="https://wa.me/917007733078">
+💬
+</a>
 
 </body>
 </html>
