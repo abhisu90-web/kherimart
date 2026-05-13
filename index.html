@@ -16,187 +16,168 @@ font-family:Arial,sans-serif;
 
 body{
 background:#f4f4f4;
-color:#222;
-}
-
-html{
-scroll-behavior:smooth;
 }
 
 header{
-background:white;
-padding:15px 20px;
+background:#1f7a3d;
+padding:18px;
 display:flex;
 justify-content:space-between;
 align-items:center;
+color:white;
 position:sticky;
 top:0;
 z-index:1000;
-box-shadow:0 2px 10px rgba(0,0,0,0.1);
 }
 
 .logo{
-font-size:34px;
+font-size:42px;
 font-weight:bold;
-color:#1f7a3d;
 }
 
 .logo span{
-color:#ff9800;
+color:orange;
 }
 
 .menu{
-font-size:32px;
-}
-
-.search{
-padding:20px;
-background:white;
-}
-
-.search input{
-width:100%;
-padding:18px;
-border-radius:14px;
-border:2px solid #ddd;
-font-size:18px;
+font-size:38px;
 }
 
 .hero{
-background:linear-gradient(135deg,#1f7a3d,#2ca65a);
-padding:70px 20px;
+background:orange;
+padding:60px 20px;
 text-align:center;
 color:white;
 }
 
 .hero h1{
-font-size:45px;
+font-size:55px;
 margin-bottom:20px;
 }
 
 .hero p{
-font-size:22px;
+font-size:24px;
 margin-bottom:30px;
 }
 
-.hero a{
-display:inline-block;
-background:#ff9800;
-padding:18px 35px;
-border-radius:12px;
+.hero button{
+background:#1f7a3d;
 color:white;
+border:none;
+padding:18px 40px;
 font-size:22px;
-font-weight:bold;
-text-decoration:none;
+border-radius:10px;
 }
 
 .section{
-padding:35px 20px;
+padding:30px 20px;
 }
 
 .section h2{
-font-size:34px;
+font-size:45px;
 margin-bottom:25px;
-}
-
-.categories{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(140px,1fr));
-gap:15px;
-}
-
-.cat{
-background:white;
-padding:25px 10px;
-border-radius:15px;
-text-align:center;
-font-size:20px;
-font-weight:bold;
-box-shadow:0 2px 10px rgba(0,0,0,0.08);
-transition:0.3s;
-}
-
-.cat:hover{
-transform:translateY(-5px);
 }
 
 .products{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+grid-template-columns:1fr 1fr;
 gap:20px;
 }
 
 .product{
 background:white;
-border-radius:18px;
+border-radius:20px;
 overflow:hidden;
 box-shadow:0 2px 10px rgba(0,0,0,0.1);
 }
 
 .product img{
 width:100%;
-height:190px;
+height:250px;
 object-fit:cover;
 }
 
 .content{
-padding:15px;
+padding:18px;
 }
 
 .content h3{
-font-size:24px;
+font-size:22px;
 margin-bottom:10px;
 }
 
 .price{
-font-size:26px;
+font-size:20px;
 color:#1f7a3d;
 font-weight:bold;
 margin-bottom:10px;
 }
 
-.old{
-text-decoration:line-through;
-color:gray;
-font-size:18px;
-margin-left:10px;
+.content p{
+font-size:15px;
+margin-bottom:15px;
+color:#666;
 }
 
-.content p{
-font-size:17px;
+.qty-box{
+display:flex;
+align-items:center;
+gap:10px;
 margin-bottom:15px;
-color:#555;
+}
+
+.qty-box button{
+width:40px;
+height:40px;
+border:none;
+background:#1f7a3d;
+color:white;
+font-size:22px;
+border-radius:8px;
+}
+
+.qty-box input{
+width:60px;
+height:40px;
+text-align:center;
+font-size:18px;
+border:2px solid #ccc;
+border-radius:8px;
+}
+
+textarea{
+width:100%;
+height:70px;
+padding:10px;
+border-radius:10px;
+border:1px solid #ccc;
+margin-bottom:15px;
 }
 
 .btn{
-display:block;
-text-align:center;
+width:100%;
 background:#1f7a3d;
-padding:14px;
-border-radius:10px;
 color:white;
-font-size:18px;
+padding:15px;
+border:none;
+border-radius:10px;
+font-size:20px;
 font-weight:bold;
-text-decoration:none;
 }
 
 .features{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
-gap:15px;
+grid-template-columns:1fr 1fr;
+gap:20px;
 }
 
 .feature{
 background:white;
 padding:25px;
-border-radius:15px;
+border-radius:20px;
 text-align:center;
-box-shadow:0 2px 10px rgba(0,0,0,0.08);
-}
-
-.feature h3{
-font-size:22px;
-margin-top:10px;
+font-size:24px;
+font-weight:bold;
 }
 
 footer{
@@ -208,30 +189,29 @@ margin-top:40px;
 }
 
 footer h2{
-font-size:36px;
-margin-bottom:15px;
+font-size:40px;
+margin-bottom:20px;
 }
 
 footer p{
-font-size:20px;
 margin-bottom:10px;
+font-size:18px;
 }
 
 .whatsapp{
 position:fixed;
-bottom:20px;
 right:20px;
-background:#25D366;
-width:70px;
-height:70px;
+bottom:20px;
+background:#25d366;
+width:75px;
+height:75px;
+border-radius:50%;
 display:flex;
 justify-content:center;
 align-items:center;
-border-radius:50%;
-font-size:35px;
-text-decoration:none;
+font-size:40px;
 color:white;
-box-shadow:0 2px 10px rgba(0,0,0,0.3);
+text-decoration:none;
 }
 
 </style>
@@ -244,104 +224,18 @@ box-shadow:0 2px 10px rgba(0,0,0,0.3);
 <div class="menu">☰</div>
 </header>
 
-<div class="search">
-<input type="text" placeholder="Search grocery, sabzi, medicine...">
-</div>
-
 <section class="hero">
-<h1>Lakhimpur Kheri Ka Apna Online Bazaar</h1>
+<h1>Lakhimpur Kheri Ka Online Bazaar</h1>
+<p>Grocery, medicines, electronics aur home products ghar tak.</p>
 
-<p>Groceries, vegetables, electronics aur daily needs ab ghar tak.</p>
-
-<a href="https://wa.me/919555153856">
-Order on WhatsApp
-</a>
+<button onclick="window.location.href='#grocery'">
+Shop Now
+</button>
 </section>
 
-<section class="section">
-
-<h2>Popular Categories</h2>
-
-<div class="categories">
-
-<a href="#vegetables" style="text-decoration:none;color:black;">
-<div class="cat">🥦 Vegetables</div>
-</a>
-
-<a href="#grocery" style="text-decoration:none;color:black;">
-<div class="cat">🛒 Grocery</div>
-</a>
-
-<a href="#medicines" style="text-decoration:none;color:black;">
-<div class="cat">💊 Medicines</div>
-</a>
-
-<a href="#electronics" style="text-decoration:none;color:black;">
-<div class="cat">📱 Electronics</div>
-</a>
-
-<a href="#construction" style="text-decoration:none;color:black;">
-<div class="cat">🏗 Construction</div>
-</a>
-
-<a href="#home" style="text-decoration:none;color:black;">
-<div class="cat">🏠 Home Essentials</div>
-</a>
-
-</div>
-</section>
-
-<section class="section" id="vegetables">
-
-<h2>🥦 Fresh Vegetables</h2>
-
-<div class="products">
-
-<div class="product">
-<img src="https://images.unsplash.com/photo-1546094096-0df4bcaaa337?q=80&w=1200&auto=format&fit=crop">
-
-<div class="content">
-<h3>Fresh Tomato</h3>
-
-<div class="price">
-₹40 <span class="old">₹60</span>
-</div>
-
-<p>1kg fresh tamatar</p>
-
-<a class="btn"
-href="https://wa.me/919555153856?text=I want Fresh Tomato">
-Order Now
-</a>
-
-</div>
-</div>
-
-<div class="product">
-<img src="https://images.unsplash.com/photo-1518977676601-b53f82aba655?q=80&w=1200&auto=format&fit=crop">
-
-<div class="content">
-<h3>Fresh Potato</h3>
-
-<div class="price">
-₹25 <span class="old">₹35</span>
-</div>
-
-<p>1kg fresh aloo</p>
-
-<a class="btn"
-href="https://wa.me/919555153856?text=I want Fresh Potato">
-Order Now
-</a>
-
-</div>
-</div>
-
-</div>
-</section>
+<!-- Grocery -->
 
 <section class="section" id="grocery">
-
 <h2>🛒 Grocery Items</h2>
 
 <div class="products">
@@ -351,37 +245,45 @@ Order Now
 
 <div class="content">
 <h3>Basmati Rice</h3>
-
-<div class="price">
-₹120 <span class="old">₹150</span>
-</div>
-
+<div class="price">₹120/kg</div>
 <p>Premium quality rice</p>
 
-<a class="btn"
-href="https://wa.me/919555153856?text=I want Basmati Rice">
+<div class="qty-box">
+<button onclick="decreaseQty('rice')">-</button>
+<input type="number" id="rice" value="1">
+<button onclick="increaseQty('rice')">+</button>
+</div>
+
+<textarea id="riceNote" placeholder="Kitna chahiye ya koi details"></textarea>
+
+<button class="btn"
+onclick="orderNow('Basmati Rice','rice','riceNote')">
 Order Now
-</a>
+</button>
 
 </div>
 </div>
 
 <div class="product">
-<img src="https://images.unsplash.com/photo-1563453392212-326f5e854473?q=80&w=1200&auto=format&fit=crop">
+<img src="https://images.unsplash.com/photo-1620706857370-e1b9770e8bb1?q=80&w=1200&auto=format&fit=crop">
 
 <div class="content">
 <h3>Cooking Oil</h3>
+<div class="price">₹160/litre</div>
+<p>Refined sunflower oil</p>
 
-<div class="price">
-₹160
+<div class="qty-box">
+<button onclick="decreaseQty('oil')">-</button>
+<input type="number" id="oil" value="1">
+<button onclick="increaseQty('oil')">+</button>
 </div>
 
-<p>1 litre refined oil</p>
+<textarea id="oilNote" placeholder="Kitna chahiye ya koi details"></textarea>
 
-<a class="btn"
-href="https://wa.me/919555153856?text=I want Cooking Oil">
+<button class="btn"
+onclick="orderNow('Cooking Oil','oil','oilNote')">
 Order Now
-</a>
+</button>
 
 </div>
 </div>
@@ -389,8 +291,9 @@ Order Now
 </div>
 </section>
 
-<section class="section" id="medicines">
+<!-- Medicines -->
 
+<section class="section" id="medicines">
 <h2>💊 Medicines</h2>
 
 <div class="products">
@@ -400,37 +303,45 @@ Order Now
 
 <div class="content">
 <h3>Paracetamol</h3>
-
-<div class="price">
-₹35
-</div>
-
+<div class="price">₹35</div>
 <p>Fever medicine tablets</p>
 
-<a class="btn"
-href="https://wa.me/919555153856?text=I want Paracetamol">
+<div class="qty-box">
+<button onclick="decreaseQty('med1')">-</button>
+<input type="number" id="med1" value="1">
+<button onclick="increaseQty('med1')">+</button>
+</div>
+
+<textarea id="med1Note"></textarea>
+
+<button class="btn"
+onclick="orderNow('Paracetamol','med1','med1Note')">
 Order Now
-</a>
+</button>
 
 </div>
 </div>
 
 <div class="product">
-<img src="https://images.unsplash.com/photo-1584017911766-d451b3d0e843?q=80&w=1200&auto=format&fit=crop">
+<img src="https://images.unsplash.com/photo-1471864190281-a93a3070b6de?q=80&w=1200&auto=format&fit=crop">
 
 <div class="content">
 <h3>Cough Syrup</h3>
-
-<div class="price">
-₹120
-</div>
-
+<div class="price">₹120</div>
 <p>Cold & cough relief</p>
 
-<a class="btn"
-href="https://wa.me/919555153856?text=I want Cough Syrup">
+<div class="qty-box">
+<button onclick="decreaseQty('med2')">-</button>
+<input type="number" id="med2" value="1">
+<button onclick="increaseQty('med2')">+</button>
+</div>
+
+<textarea id="med2Note"></textarea>
+
+<button class="btn"
+onclick="orderNow('Cough Syrup','med2','med2Note')">
 Order Now
-</a>
+</button>
 
 </div>
 </div>
@@ -438,8 +349,9 @@ Order Now
 </div>
 </section>
 
-<section class="section" id="electronics">
+<!-- Electronics -->
 
+<section class="section">
 <h2>📱 Electronics</h2>
 
 <div class="products">
@@ -449,37 +361,45 @@ Order Now
 
 <div class="content">
 <h3>Smartphone</h3>
+<div class="price">₹10,999</div>
+<p>Latest Android smartphone</p>
 
-<div class="price">
-₹12,999
+<div class="qty-box">
+<button onclick="decreaseQty('mob')">-</button>
+<input type="number" id="mob" value="1">
+<button onclick="increaseQty('mob')">+</button>
 </div>
 
-<p>Latest Android mobile</p>
+<textarea id="mobNote"></textarea>
 
-<a class="btn"
-href="https://wa.me/919555153856?text=I want Smartphone">
+<button class="btn"
+onclick="orderNow('Smartphone','mob','mobNote')">
 Order Now
-</a>
+</button>
 
 </div>
 </div>
 
 <div class="product">
-<img src="https://images.unsplash.com/photo-1580910051074-3eb694886505?q=80&w=1200&auto=format&fit=crop">
+<img src="https://images.unsplash.com/photo-1546435770-a3e426bf472b?q=80&w=1200&auto=format&fit=crop">
 
 <div class="content">
 <h3>Bluetooth Speaker</h3>
+<div class="price">₹899</div>
+<p>Portable speaker</p>
 
-<div class="price">
-₹899
+<div class="qty-box">
+<button onclick="decreaseQty('speaker')">-</button>
+<input type="number" id="speaker" value="1">
+<button onclick="increaseQty('speaker')">+</button>
 </div>
 
-<p>Portable wireless speaker</p>
+<textarea id="speakerNote"></textarea>
 
-<a class="btn"
-href="https://wa.me/919555153856?text=I want Bluetooth Speaker">
+<button class="btn"
+onclick="orderNow('Bluetooth Speaker','speaker','speakerNote')">
 Order Now
-</a>
+</button>
 
 </div>
 </div>
@@ -487,28 +407,33 @@ Order Now
 </div>
 </section>
 
-<section class="section" id="construction">
+<!-- Construction -->
 
+<section class="section">
 <h2>🏗 Construction Materials</h2>
 
 <div class="products">
 
 <div class="product">
-<img src="https://images.unsplash.com/photo-1598515214211-89d3c73ae83b?q=80&w=1200&auto=format&fit=crop">
+<img src="https://images.unsplash.com/photo-1599707254554-027aeb4deacd?q=80&w=1200&auto=format&fit=crop">
 
 <div class="content">
 <h3>Cement Bag</h3>
-
-<div class="price">
-₹420
-</div>
-
+<div class="price">₹420</div>
 <p>UltraTech Cement</p>
 
-<a class="btn"
-href="https://wa.me/919555153856?text=I want Cement Bag">
+<div class="qty-box">
+<button onclick="decreaseQty('cement')">-</button>
+<input type="number" id="cement" value="1">
+<button onclick="increaseQty('cement')">+</button>
+</div>
+
+<textarea id="cementNote"></textarea>
+
+<button class="btn"
+onclick="orderNow('Cement Bag','cement','cementNote')">
 Order Now
-</a>
+</button>
 
 </div>
 </div>
@@ -518,17 +443,21 @@ Order Now
 
 <div class="content">
 <h3>TMT Sariya</h3>
-
-<div class="price">
-₹65/kg
-</div>
-
+<div class="price">₹65/kg</div>
 <p>Strong steel bars</p>
 
-<a class="btn"
-href="https://wa.me/919555153856?text=I want TMT Sariya">
+<div class="qty-box">
+<button onclick="decreaseQty('sariya')">-</button>
+<input type="number" id="sariya" value="1">
+<button onclick="increaseQty('sariya')">+</button>
+</div>
+
+<textarea id="sariyaNote"></textarea>
+
+<button class="btn"
+onclick="orderNow('TMT Sariya','sariya','sariyaNote')">
 Order Now
-</a>
+</button>
 
 </div>
 </div>
@@ -536,8 +465,9 @@ Order Now
 </div>
 </section>
 
-<section class="section" id="home">
+<!-- Home -->
 
+<section class="section">
 <h2>🏠 Home Essentials</h2>
 
 <div class="products">
@@ -547,37 +477,45 @@ Order Now
 
 <div class="content">
 <h3>Detergent Powder</h3>
-
-<div class="price">
-₹120
-</div>
-
+<div class="price">₹120</div>
 <p>Clothes washing powder</p>
 
-<a class="btn"
-href="https://wa.me/919555153856?text=I want Detergent Powder">
+<div class="qty-box">
+<button onclick="decreaseQty('detergent')">-</button>
+<input type="number" id="detergent" value="1">
+<button onclick="increaseQty('detergent')">+</button>
+</div>
+
+<textarea id="detergentNote"></textarea>
+
+<button class="btn"
+onclick="orderNow('Detergent Powder','detergent','detergentNote')">
 Order Now
-</a>
+</button>
 
 </div>
 </div>
 
 <div class="product">
-<img src="https://images.unsplash.com/photo-1631889993959-41b4e9c6e3c5?q=80&w=1200&auto=format&fit=crop">
+<img src="https://images.unsplash.com/photo-1563453392212-326f5e854473?q=80&w=1200&auto=format&fit=crop">
 
 <div class="content">
 <h3>Floor Cleaner</h3>
-
-<div class="price">
-₹95
-</div>
-
+<div class="price">₹95</div>
 <p>Home cleaning liquid</p>
 
-<a class="btn"
-href="https://wa.me/919555153856?text=I want Floor Cleaner">
+<div class="qty-box">
+<button onclick="decreaseQty('cleaner')">-</button>
+<input type="number" id="cleaner" value="1">
+<button onclick="increaseQty('cleaner')">+</button>
+</div>
+
+<textarea id="cleanerNote"></textarea>
+
+<button class="btn"
+onclick="orderNow('Floor Cleaner','cleaner','cleanerNote')">
 Order Now
-</a>
+</button>
 
 </div>
 </div>
@@ -585,31 +523,17 @@ Order Now
 </div>
 </section>
 
-<section class="section">
+<!-- Features -->
 
+<section class="section">
 <h2>Why KheriMart?</h2>
 
 <div class="features">
 
-<div class="feature">
-<h1>⚡</h1>
-<h3>Fast Delivery</h3>
-</div>
-
-<div class="feature">
-<h1>🏪</h1>
-<h3>Trusted Local Shops</h3>
-</div>
-
-<div class="feature">
-<h1>💵</h1>
-<h3>Cash on Delivery</h3>
-</div>
-
-<div class="feature">
-<h1>📦</h1>
-<h3>Same Day Delivery</h3>
-</div>
+<div class="feature">⚡ Fast Delivery</div>
+<div class="feature">🏪 Trusted Local Shops</div>
+<div class="feature">💵 Cash on Delivery</div>
+<div class="feature">📦 Same Day Delivery</div>
 
 </div>
 </section>
@@ -622,8 +546,6 @@ Order Now
 
 <p>📞 9555153856</p>
 
-<p>Hyperlocal Delivery Marketplace</p>
-
 <p>© 2026 KheriMart</p>
 
 </footer>
@@ -632,6 +554,41 @@ Order Now
 href="https://wa.me/919555153856">
 💬
 </a>
+
+<script>
+
+function increaseQty(id){
+let input=document.getElementById(id);
+input.value=parseInt(input.value)+1;
+}
+
+function decreaseQty(id){
+let input=document.getElementById(id);
+
+if(parseInt(input.value)>1){
+input.value=parseInt(input.value)-1;
+}
+}
+
+function orderNow(product,qtyId,noteId){
+
+let qty=document.getElementById(qtyId).value;
+let note=document.getElementById(noteId).value;
+
+let message=
+"KheriMart Order%0A%0A"+
+"Product: "+product+"%0A"+
+"Quantity: "+qty+"%0A"+
+"Customer Details: "+note;
+
+window.open(
+"https://wa.me/919555153856?text="+message,
+"_blank"
+);
+
+}
+
+</script>
 
 </body>
 </html>
