@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>KheriMart Pro</title>
+<title>KheriMart</title>
 
 <style>
 
@@ -17,6 +17,10 @@ font-family:Arial,sans-serif;
 body{
 background:#f4f4f4;
 color:#222;
+}
+
+html{
+scroll-behavior:smooth;
 }
 
 header{
@@ -34,7 +38,7 @@ box-shadow:0 2px 10px rgba(0,0,0,0.1);
 .logo{
 font-size:34px;
 font-weight:bold;
-color:#1e7f3f;
+color:#1f7a3d;
 }
 
 .logo span{
@@ -42,7 +46,7 @@ color:#ff9800;
 }
 
 .menu{
-font-size:30px;
+font-size:32px;
 }
 
 .search{
@@ -53,20 +57,20 @@ background:white;
 .search input{
 width:100%;
 padding:18px;
-border-radius:15px;
+border-radius:14px;
 border:2px solid #ddd;
 font-size:18px;
 }
 
 .hero{
-background:linear-gradient(135deg,#1e7f3f,#2ca65a);
-padding:60px 20px;
-color:white;
+background:linear-gradient(135deg,#1f7a3d,#2ca65a);
+padding:70px 20px;
 text-align:center;
+color:white;
 }
 
 .hero h1{
-font-size:42px;
+font-size:45px;
 margin-bottom:20px;
 }
 
@@ -76,18 +80,18 @@ margin-bottom:30px;
 }
 
 .hero a{
+display:inline-block;
 background:#ff9800;
 padding:18px 35px;
 border-radius:12px;
-text-decoration:none;
 color:white;
 font-size:22px;
 font-weight:bold;
-display:inline-block;
+text-decoration:none;
 }
 
 .section{
-padding:30px 20px;
+padding:35px 20px;
 }
 
 .section h2{
@@ -97,18 +101,18 @@ margin-bottom:25px;
 
 .categories{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(140px,1fr));
 gap:15px;
 }
 
 .cat{
 background:white;
 padding:25px 10px;
-text-align:center;
 border-radius:15px;
-box-shadow:0 2px 8px rgba(0,0,0,0.08);
+text-align:center;
 font-size:20px;
 font-weight:bold;
+box-shadow:0 2px 10px rgba(0,0,0,0.08);
 transition:0.3s;
 }
 
@@ -118,7 +122,7 @@ transform:translateY(-5px);
 
 .products{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
 gap:20px;
 }
 
@@ -131,22 +135,22 @@ box-shadow:0 2px 10px rgba(0,0,0,0.1);
 
 .product img{
 width:100%;
-height:180px;
+height:190px;
 object-fit:cover;
 }
 
-.product-content{
+.content{
 padding:15px;
 }
 
-.product h3{
+.content h3{
 font-size:24px;
 margin-bottom:10px;
 }
 
 .price{
 font-size:26px;
-color:#1e7f3f;
+color:#1f7a3d;
 font-weight:bold;
 margin-bottom:10px;
 }
@@ -158,7 +162,7 @@ font-size:18px;
 margin-left:10px;
 }
 
-.product p{
+.content p{
 font-size:17px;
 margin-bottom:15px;
 color:#555;
@@ -167,13 +171,13 @@ color:#555;
 .btn{
 display:block;
 text-align:center;
-background:#1e7f3f;
+background:#1f7a3d;
 padding:14px;
 border-radius:10px;
 color:white;
-text-decoration:none;
 font-size:18px;
 font-weight:bold;
+text-decoration:none;
 }
 
 .features{
@@ -218,15 +222,15 @@ position:fixed;
 bottom:20px;
 right:20px;
 background:#25D366;
-color:white;
 width:70px;
 height:70px;
-border-radius:50%;
 display:flex;
 justify-content:center;
 align-items:center;
+border-radius:50%;
 font-size:35px;
 text-decoration:none;
+color:white;
 box-shadow:0 2px 10px rgba(0,0,0,0.3);
 }
 
@@ -241,12 +245,13 @@ box-shadow:0 2px 10px rgba(0,0,0,0.3);
 </header>
 
 <div class="search">
-<input type="text" placeholder="Search grocery, sabzi, medicines...">
+<input type="text" placeholder="Search grocery, sabzi, medicine...">
 </div>
 
 <section class="hero">
 <h1>Lakhimpur Kheri Ka Apna Online Bazaar</h1>
-<p>Sabzi, grocery, electronics aur daily needs ab ghar tak.</p>
+
+<p>Groceries, vegetables, electronics aur daily needs ab ghar tak.</p>
 
 <a href="https://wa.me/919555153856">
 Order on WhatsApp
@@ -254,6 +259,7 @@ Order on WhatsApp
 </section>
 
 <section class="section">
+
 <h2>Popular Categories</h2>
 
 <div class="categories">
@@ -261,86 +267,318 @@ Order on WhatsApp
 <a href="#vegetables" style="text-decoration:none;color:black;">
 <div class="cat">🥦 Vegetables</div>
 </a>
+
 <a href="#grocery" style="text-decoration:none;color:black;">
 <div class="cat">🛒 Grocery</div>
 </a>
+
 <a href="#medicines" style="text-decoration:none;color:black;">
 <div class="cat">💊 Medicines</div>
 </a>
+
+<a href="#electronics" style="text-decoration:none;color:black;">
 <div class="cat">📱 Electronics</div>
-<div class="cat">🥛 Dairy</div>
-<div class="cat">🍪 Snacks</div>
-<div class="cat">🏠 Home</div>
+</a>
+
+<a href="#construction" style="text-decoration:none;color:black;">
 <div class="cat">🏗 Construction</div>
+</a>
+
+<a href="#home" style="text-decoration:none;color:black;">
+<div class="cat">🏠 Home Essentials</div>
+</a>
 
 </div>
 </section>
 
 <section class="section" id="vegetables">
-<h2>🔥 Trending Products</h2>
+
+<h2>🥦 Fresh Vegetables</h2>
 
 <div class="products">
 
 <div class="product">
 <img src="https://images.unsplash.com/photo-1546094096-0df4bcaaa337?q=80&w=1200&auto=format&fit=crop">
-<div class="product-content">
+
+<div class="content">
 <h3>Fresh Tomato</h3>
-<div class="price">₹40 <span class="old">₹60</span></div>
+
+<div class="price">
+₹40 <span class="old">₹60</span>
+</div>
+
 <p>1kg fresh tamatar</p>
-<a class="btn" href="https://wa.me/919555153856?text=I want Fresh Tomato">Order Now</a>
+
+<a class="btn"
+href="https://wa.me/919555153856?text=I want Fresh Tomato">
+Order Now
+</a>
+
 </div>
 </div>
+
+<div class="product">
+<img src="https://images.unsplash.com/photo-1518977676601-b53f82aba655?q=80&w=1200&auto=format&fit=crop">
+
+<div class="content">
+<h3>Fresh Potato</h3>
+
+<div class="price">
+₹25 <span class="old">₹35</span>
+</div>
+
+<p>1kg fresh aloo</p>
+
+<a class="btn"
+href="https://wa.me/919555153856?text=I want Fresh Potato">
+Order Now
+</a>
+
+</div>
+</div>
+
+</div>
+</section>
+
+<section class="section" id="grocery">
+
+<h2>🛒 Grocery Items</h2>
+
+<div class="products">
 
 <div class="product">
 <img src="https://images.unsplash.com/photo-1586201375761-83865001e31c?q=80&w=1200&auto=format&fit=crop">
-<div class="product-content">
-<h3>Amul Milk</h3>
-<div class="price">₹65 <span class="old">₹72</span></div>
-<p>Fresh full cream milk</p>
-<a class="btn" href="https://wa.me/919555153856?text=I want Amul Milk">Order Now</a>
-</div>
-</div>
 
-<div class="product">
-<img src="https://images.unsplash.com/photo-1603048297172-c92544798d5a?q=80&w=1200&auto=format&fit=crop">
-<div class="product-content">
-  <div id="grocery"></div>
+<div class="content">
 <h3>Basmati Rice</h3>
-<div class="price">₹120 <span class="old">₹150</span></div>
-<p>Premium quality rice</p>
-<a class="btn" href="https://wa.me/919555153856?text=I want Basmati Rice">Order Now</a>
-</div>
+
+<div class="price">
+₹120 <span class="old">₹150</span>
 </div>
 
-<div class="product">
-<img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?q=80&w=1200&auto=format&fit=crop">
-<div class="product-content">
-  <div id="electronics"></div>
-<h3>Smartphone</h3>
-<div class="price">₹12,999</div>
-<p>Latest Android mobile</p>
-<a class="btn" href="https://wa.me/919555153856?text=I want Smartphone">Order Now</a>
+<p>Premium quality rice</p>
+
+<a class="btn"
+href="https://wa.me/919555153856?text=I want Basmati Rice">
+Order Now
+</a>
+
 </div>
 </div>
 
 <div class="product">
 <img src="https://images.unsplash.com/photo-1563453392212-326f5e854473?q=80&w=1200&auto=format&fit=crop">
-<div class="product-content">
+
+<div class="content">
 <h3>Cooking Oil</h3>
-<div class="price">₹160</div>
+
+<div class="price">
+₹160
+</div>
+
 <p>1 litre refined oil</p>
-<a class="btn" href="https://wa.me/919555153856?text=I want Cooking Oil">Order Now</a>
+
+<a class="btn"
+href="https://wa.me/919555153856?text=I want Cooking Oil">
+Order Now
+</a>
+
+</div>
+</div>
+
+</div>
+</section>
+
+<section class="section" id="medicines">
+
+<h2>💊 Medicines</h2>
+
+<div class="products">
+
+<div class="product">
+<img src="https://images.unsplash.com/photo-1587854692152-cbe660dbde88?q=80&w=1200&auto=format&fit=crop">
+
+<div class="content">
+<h3>Paracetamol</h3>
+
+<div class="price">
+₹35
+</div>
+
+<p>Fever medicine tablets</p>
+
+<a class="btn"
+href="https://wa.me/919555153856?text=I want Paracetamol">
+Order Now
+</a>
+
 </div>
 </div>
 
 <div class="product">
+<img src="https://images.unsplash.com/photo-1584017911766-d451b3d0e843?q=80&w=1200&auto=format&fit=crop">
+
+<div class="content">
+<h3>Cough Syrup</h3>
+
+<div class="price">
+₹120
+</div>
+
+<p>Cold & cough relief</p>
+
+<a class="btn"
+href="https://wa.me/919555153856?text=I want Cough Syrup">
+Order Now
+</a>
+
+</div>
+</div>
+
+</div>
+</section>
+
+<section class="section" id="electronics">
+
+<h2>📱 Electronics</h2>
+
+<div class="products">
+
+<div class="product">
+<img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?q=80&w=1200&auto=format&fit=crop">
+
+<div class="content">
+<h3>Smartphone</h3>
+
+<div class="price">
+₹12,999
+</div>
+
+<p>Latest Android mobile</p>
+
+<a class="btn"
+href="https://wa.me/919555153856?text=I want Smartphone">
+Order Now
+</a>
+
+</div>
+</div>
+
+<div class="product">
+<img src="https://images.unsplash.com/photo-1580910051074-3eb694886505?q=80&w=1200&auto=format&fit=crop">
+
+<div class="content">
+<h3>Bluetooth Speaker</h3>
+
+<div class="price">
+₹899
+</div>
+
+<p>Portable wireless speaker</p>
+
+<a class="btn"
+href="https://wa.me/919555153856?text=I want Bluetooth Speaker">
+Order Now
+</a>
+
+</div>
+</div>
+
+</div>
+</section>
+
+<section class="section" id="construction">
+
+<h2>🏗 Construction Materials</h2>
+
+<div class="products">
+
+<div class="product">
 <img src="https://images.unsplash.com/photo-1598515214211-89d3c73ae83b?q=80&w=1200&auto=format&fit=crop">
-<div class="product-content">
-  <div id="construction"></div>
+
+<div class="content">
 <h3>Cement Bag</h3>
-<div class="price">₹420</div>
+
+<div class="price">
+₹420
+</div>
+
 <p>UltraTech Cement</p>
-<a class="btn" href="https://wa.me/919555153856?text=I want Cement Bag">Order Now</a>
+
+<a class="btn"
+href="https://wa.me/919555153856?text=I want Cement Bag">
+Order Now
+</a>
+
+</div>
+</div>
+
+<div class="product">
+<img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=1200&auto=format&fit=crop">
+
+<div class="content">
+<h3>TMT Sariya</h3>
+
+<div class="price">
+₹65/kg
+</div>
+
+<p>Strong steel bars</p>
+
+<a class="btn"
+href="https://wa.me/919555153856?text=I want TMT Sariya">
+Order Now
+</a>
+
+</div>
+</div>
+
+</div>
+</section>
+
+<section class="section" id="home">
+
+<h2>🏠 Home Essentials</h2>
+
+<div class="products">
+
+<div class="product">
+<img src="https://images.unsplash.com/photo-1626806787461-102c1bfaaea1?q=80&w=1200&auto=format&fit=crop">
+
+<div class="content">
+<h3>Detergent Powder</h3>
+
+<div class="price">
+₹120
+</div>
+
+<p>Clothes washing powder</p>
+
+<a class="btn"
+href="https://wa.me/919555153856?text=I want Detergent Powder">
+Order Now
+</a>
+
+</div>
+</div>
+
+<div class="product">
+<img src="https://images.unsplash.com/photo-1631889993959-41b4e9c6e3c5?q=80&w=1200&auto=format&fit=crop">
+
+<div class="content">
+<h3>Floor Cleaner</h3>
+
+<div class="price">
+₹95
+</div>
+
+<p>Home cleaning liquid</p>
+
+<a class="btn"
+href="https://wa.me/919555153856?text=I want Floor Cleaner">
+Order Now
+</a>
+
 </div>
 </div>
 
@@ -348,6 +586,7 @@ Order on WhatsApp
 </section>
 
 <section class="section">
+
 <h2>Why KheriMart?</h2>
 
 <div class="features">
@@ -389,7 +628,8 @@ Order on WhatsApp
 
 </footer>
 
-<a class="whatsapp" href="https://wa.me/919555153856">
+<a class="whatsapp"
+href="https://wa.me/919555153856">
 💬
 </a>
 
