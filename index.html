@@ -22,10 +22,11 @@ align-items:center;
 color:white;
 position:sticky;
 top:0;
+z-index:1000;
 }
 
 .logo{
-font-size:40px;
+font-size:38px;
 font-weight:bold;
 }
 
@@ -37,35 +38,20 @@ background:white;
 .search input{
 width:100%;
 padding:15px;
-font-size:18px;
 border-radius:12px;
 border:1px solid #ccc;
+font-size:18px;
 }
 
 .banner{
 background:orange;
-padding:60px 20px;
+padding:50px 20px;
 text-align:center;
 color:white;
 }
 
 .banner h1{
 font-size:42px;
-margin-bottom:20px;
-}
-
-.banner p{
-font-size:22px;
-margin-bottom:20px;
-}
-
-.banner button{
-background:#1f7a3d;
-color:white;
-border:none;
-padding:15px 30px;
-font-size:22px;
-border-radius:12px;
 }
 
 .section{
@@ -73,25 +59,7 @@ padding:20px;
 }
 
 .section h2{
-font-size:36px;
-margin-bottom:20px;
-}
-
-.categories{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:15px;
-}
-
-.cat{
-background:white;
-padding:25px;
-border-radius:15px;
-text-align:center;
-font-size:22px;
-font-weight:bold;
-box-shadow:0 2px 10px rgba(0,0,0,0.1);
-cursor:pointer;
+font-size:34px;
 }
 
 .products{
@@ -117,40 +85,22 @@ object-fit:cover;
 padding:15px;
 }
 
-.content h3{
-font-size:24px;
-margin-bottom:10px;
-}
-
 .price{
 font-size:28px;
-color:#1f7a3d;
-font-weight:bold;
-margin-bottom:10px;
-}
-
-.old{
-text-decoration:line-through;
-color:gray;
-font-size:18px;
-margin-left:10px;
-}
-
-.delivery{
 color:green;
-font-size:16px;
-margin-bottom:15px;
+font-weight:bold;
 }
 
 .btn{
 width:100%;
 background:#1f7a3d;
 color:white;
-padding:15px;
-font-size:20px;
+padding:14px;
 border:none;
-border-radius:12px;
+border-radius:10px;
+font-size:18px;
 font-weight:bold;
+margin-top:10px;
 }
 
 .cart-btn{
@@ -159,29 +109,65 @@ bottom:20px;
 right:20px;
 background:#ff9800;
 color:white;
-padding:18px 24px;
+padding:18px;
 border-radius:50px;
 font-size:22px;
 font-weight:bold;
-box-shadow:0 2px 10px rgba(0,0,0,0.3);
+z-index:1000;
+}
+
+.cart-box{
+position:fixed;
+top:0;
+right:-100%;
+width:90%;
+height:100%;
+background:white;
+z-index:2000;
+padding:20px;
+overflow:auto;
+transition:0.4s;
+}
+
+.cart-item{
+border-bottom:1px solid #ddd;
+padding:15px 0;
+}
+
+.qty{
+display:flex;
+gap:10px;
+align-items:center;
+margin-top:10px;
+}
+
+.qty button{
+padding:5px 12px;
+font-size:18px;
+}
+
+.checkout{
+background:green;
+color:white;
+padding:15px;
+width:100%;
+border:none;
+font-size:22px;
+border-radius:12px;
+margin-top:20px;
+}
+
+.close{
+font-size:30px;
+float:right;
 }
 
 footer{
 background:#111;
 color:white;
-padding:40px 20px;
+padding:40px;
 text-align:center;
 margin-top:30px;
-}
-
-footer h2{
-font-size:36px;
-margin-bottom:15px;
-}
-
-footer p{
-font-size:18px;
-margin-bottom:10px;
 }
 
 </style>
@@ -204,7 +190,7 @@ KheriMart
 <div class="search">
 
 <input type="text"
-placeholder="Search grocery, medicines, electronics...">
+placeholder="Search grocery, medicines, electronics">
 
 </div>
 
@@ -215,58 +201,14 @@ Lakhimpur Kheri Ka Online Bazaar
 </h1>
 
 <p>
-Fast delivery • Local shops • COD Available
+Fast delivery • COD Available
 </p>
 
-<button>
-Order Now
-</button>
-
 </section>
 
 <section class="section">
 
-<h2>Popular Categories</h2>
-
-<div class="categories">
-
-<div class="cat"
-onclick="openCategory('Grocery')">
-🛒 Grocery
-</div>
-
-<div class="cat"
-onclick="openCategory('Vegetables')">
-🥦 Vegetables
-</div>
-
-<div class="cat"
-onclick="openCategory('Medicines')">
-💊 Medicines
-</div>
-
-<div class="cat"
-onclick="openCategory('Electronics')">
-📱 Electronics
-</div>
-
-<div class="cat"
-onclick="openCategory('Construction')">
-🏗 Construction
-</div>
-
-<div class="cat"
-onclick="openCategory('Home Essentials')">
-🏠 Home Essentials
-</div>
-
-</div>
-
-</section>
-
-<section class="section">
-
-<h2>🔥 Trending Products</h2>
+<h2>🛒 Grocery Items</h2>
 
 <div class="products">
 
@@ -280,11 +222,6 @@ onclick="openCategory('Home Essentials')">
 
 <div class="price">
 ₹120
-<span class="old">₹150</span>
-</div>
-
-<div class="delivery">
-⚡ Delivery in 30 mins
 </div>
 
 <button class="btn"
@@ -297,7 +234,7 @@ Add To Cart
 
 <div class="product">
 
-<img src="https://images.unsplash.com/photo-1620706857370-e1b9770e8bb1?q=80&w=1200&auto=format&fit=crop">
+<img src="https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?q=80&w=1200&auto=format&fit=crop">
 
 <div class="content">
 
@@ -305,10 +242,6 @@ Add To Cart
 
 <div class="price">
 ₹160
-</div>
-
-<div class="delivery">
-⚡ Delivery in 25 mins
 </div>
 
 <button class="btn"
@@ -331,10 +264,6 @@ Add To Cart
 ₹35
 </div>
 
-<div class="delivery">
-⚡ Delivery in 20 mins
-</div>
-
 <button class="btn"
 onclick="addToCart('Paracetamol',35)">
 Add To Cart
@@ -355,10 +284,6 @@ Add To Cart
 ₹10999
 </div>
 
-<div class="delivery">
-⚡ Delivery in 2 hours
-</div>
-
 <button class="btn"
 onclick="addToCart('Smartphone',10999)">
 Add To Cart
@@ -371,48 +296,46 @@ Add To Cart
 
 </section>
 
-<section class="section">
-
-<h2>Why KheriMart?</h2>
-
-<div class="categories">
-
-<div class="cat">
-⚡ Fast Delivery
-</div>
-
-<div class="cat">
-🏪 Trusted Local Shops
-</div>
-
-<div class="cat">
-💵 Cash On Delivery
-</div>
-
-<div class="cat">
-📦 Live Tracking
-</div>
-
-</div>
-
-</section>
-
 <footer>
 
 <h2>KheriMart</h2>
 
-<p>Lakhimpur Kheri, Uttar Pradesh</p>
+<p>Lakhimpur Kheri</p>
 
 <p>📞 9555153856</p>
 
-<p>Hyperlocal Delivery Marketplace</p>
-
-<p>© 2026 KheriMart</p>
-
 </footer>
 
-<div class="cart-btn">
-🛒 Cart (0)
+<div class="cart-btn"
+onclick="openCart()">
+
+🛒 <span id="count">0</span>
+
+</div>
+
+<div class="cart-box"
+id="cartBox">
+
+<div class="close"
+onclick="closeCart()">
+✖
+</div>
+
+<h2>Your Cart</h2>
+
+<div id="cartItems"></div>
+
+<h2 id="total">
+Total: ₹0
+</h2>
+
+<button class="checkout"
+onclick="checkout()">
+
+Order on WhatsApp
+
+</button>
+
 </div>
 
 <script>
@@ -421,21 +344,125 @@ let cart = [];
 
 function addToCart(name,price){
 
+let found = cart.find(item => item.name===name);
+
+if(found){
+
+found.qty++;
+
+}else{
+
 cart.push({
 name:name,
-price:price
+price:price,
+qty:1
 });
-
-document.querySelector(".cart-btn").innerHTML =
-"🛒 Cart (" + cart.length + ")";
-
-alert(name + " added to cart");
 
 }
 
-function openCategory(category){
+updateCart();
 
-alert(category + " category opened");
+}
+
+function updateCart(){
+
+document.getElementById("count").innerHTML = cart.length;
+
+let items = "";
+
+let total = 0;
+
+cart.forEach((item,index)=>{
+
+total += item.price * item.qty;
+
+items += `
+
+<div class="cart-item">
+
+<h3>${item.name}</h3>
+
+<p>₹${item.price}</p>
+
+<div class="qty">
+
+<button onclick="decreaseQty(${index})">
+-
+</button>
+
+${item.qty}
+
+<button onclick="increaseQty(${index})">
++
+</button>
+
+</div>
+
+</div>
+
+`;
+
+});
+
+document.getElementById("cartItems").innerHTML = items;
+
+document.getElementById("total").innerHTML =
+"Total: ₹" + total;
+
+}
+
+function increaseQty(index){
+
+cart[index].qty++;
+
+updateCart();
+
+}
+
+function decreaseQty(index){
+
+if(cart[index].qty>1){
+
+cart[index].qty--;
+
+}else{
+
+cart.splice(index,1);
+
+}
+
+updateCart();
+
+}
+
+function openCart(){
+
+document.getElementById("cartBox").style.right = "0";
+
+}
+
+function closeCart(){
+
+document.getElementById("cartBox").style.right = "-100%";
+
+}
+
+function checkout(){
+
+let msg = "KheriMart Order%0A%0A";
+
+cart.forEach(item=>{
+
+msg += item.name +
+" x " +
+item.qty +
+"%0A";
+
+});
+
+window.open(
+"https://wa.me/919555153856?text="+msg
+);
 
 }
 
