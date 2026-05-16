@@ -1,12 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>KheriMart - Lakhimpur Kheri Online Bazaar</title>
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
+<title>KheriMart Final</title>
 
 <style>
 
@@ -22,16 +20,15 @@ scroll-behavior:smooth;
 }
 
 body{
-background:#f4f4f4;
-color:#111;
+background:#f2f2f2;
+overflow-x:hidden;
 }
 
 /* HEADER */
 
 header{
 background:#1f7f39;
-color:white;
-padding:16px 20px;
+padding:18px;
 display:flex;
 justify-content:space-between;
 align-items:center;
@@ -41,12 +38,14 @@ z-index:9999;
 }
 
 .logo{
-font-size:34px;
+color:white;
+font-size:32px;
 font-weight:bold;
 }
 
 .menu-btn{
-font-size:40px;
+font-size:42px;
+color:white;
 cursor:pointer;
 }
 
@@ -57,13 +56,13 @@ cursor:pointer;
 position:fixed;
 top:0;
 right:-100%;
-width:85%;
+width:80%;
 height:100%;
 background:white;
 z-index:99999;
-padding:25px;
-overflow-y:auto;
+padding:20px;
 transition:0.4s;
+overflow-y:auto;
 
 }
 
@@ -72,24 +71,23 @@ right:0;
 }
 
 .close-btn{
-font-size:42px;
+font-size:40px;
 text-align:right;
-cursor:pointer;
 margin-bottom:20px;
+cursor:pointer;
 }
 
 .mobile-menu h2{
 margin-bottom:20px;
-font-size:32px;
 }
 
 .mobile-menu a{
 
 display:block;
-padding:18px 0;
+padding:16px 0;
 font-size:24px;
 text-decoration:none;
-color:#111;
+color:black;
 border-bottom:1px solid #ddd;
 
 }
@@ -106,8 +104,8 @@ background:white;
 width:100%;
 padding:16px;
 font-size:20px;
-border-radius:12px;
-border:1px solid #ccc;
+border-radius:14px;
+border:2px solid #222;
 
 }
 
@@ -115,7 +113,7 @@ border:1px solid #ccc;
 
 .hero{
 
-background:linear-gradient(to right,#ff9800,#ffb300);
+background:orange;
 padding:80px 20px;
 text-align:center;
 color:white;
@@ -123,13 +121,17 @@ color:white;
 }
 
 .hero h1{
-font-size:50px;
+
+font-size:42px;
 margin-bottom:20px;
+
 }
 
 .hero p{
-font-size:26px;
-margin-bottom:35px;
+
+font-size:24px;
+margin-bottom:30px;
+
 }
 
 .hero button{
@@ -138,7 +140,7 @@ background:#1f7f39;
 color:white;
 border:none;
 padding:18px 35px;
-font-size:26px;
+font-size:24px;
 border-radius:14px;
 cursor:pointer;
 
@@ -147,17 +149,19 @@ cursor:pointer;
 /* SECTION */
 
 .section{
-padding:25px 18px;
+padding:20px;
 }
 
 .section h2{
-font-size:42px;
-margin-bottom:25px;
+
+font-size:44px;
+margin-bottom:20px;
+
 }
 
-/* GRID */
+/* CATEGORY */
 
-.grid{
+.category-grid{
 
 display:grid;
 grid-template-columns:1fr 1fr;
@@ -165,62 +169,71 @@ gap:18px;
 
 }
 
-/* CATEGORY */
-
 .category-card{
 
 background:white;
-padding:25px 15px;
+padding:20px;
 border-radius:18px;
 box-shadow:0 2px 8px rgba(0,0,0,0.1);
-font-size:22px;
-font-weight:bold;
 cursor:pointer;
-transition:0.3s;
 
-}
-
-.category-card:hover{
-transform:scale(1.03);
 }
 
 .category-card span{
+
+font-size:42px;
 display:block;
-font-size:38px;
-margin-bottom:10px;
+margin-bottom:12px;
+
 }
 
-/* PRODUCT */
+.category-card h3{
+font-size:22px;
+}
+
+/* PRODUCTS */
+
+.products{
+
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:18px;
+
+}
 
 .product{
 
 background:white;
 padding:15px;
 border-radius:18px;
+box-shadow:0 2px 8px rgba(0,0,0,0.1);
 text-align:center;
-box-shadow:0 2px 10px rgba(0,0,0,0.1);
 
 }
 
 .product img{
 
 width:100%;
-height:180px;
+height:170px;
 object-fit:cover;
 border-radius:14px;
 
 }
 
 .product h3{
-font-size:24px;
-margin:14px 0 10px;
+
+margin:12px 0;
+font-size:22px;
+
 }
 
 .price{
-font-size:24px;
+
+font-size:22px;
 font-weight:bold;
 color:#1f7f39;
 margin-bottom:12px;
+
 }
 
 .product button{
@@ -236,15 +249,56 @@ cursor:pointer;
 
 }
 
-/* FEATURES */
+/* FEATURE */
+
+.feature-grid{
+
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:18px;
+
+}
 
 .feature{
 
 background:white;
 padding:25px;
 border-radius:18px;
-font-size:24px;
+font-size:22px;
 font-weight:bold;
+
+}
+
+/* ADMIN */
+
+.admin{
+
+background:white;
+padding:20px;
+border-radius:18px;
+
+}
+
+.admin input{
+
+width:100%;
+padding:15px;
+margin-bottom:15px;
+font-size:18px;
+border-radius:12px;
+border:1px solid #ccc;
+
+}
+
+.admin button{
+
+width:100%;
+background:#1f7f39;
+color:white;
+border:none;
+padding:16px;
+font-size:20px;
+border-radius:12px;
 
 }
 
@@ -252,87 +306,73 @@ font-weight:bold;
 
 footer{
 
-background:#111;
+background:black;
 color:white;
-padding:45px 20px;
+padding:50px 20px;
 text-align:center;
+margin-top:40px;
 
 }
 
 footer h2{
-font-size:44px;
-margin-bottom:18px;
+
+font-size:48px;
+margin-bottom:20px;
+
 }
 
 footer p{
+
 font-size:24px;
-margin-bottom:10px;
+margin-bottom:12px;
+
 }
 
-/* FLOAT BUTTONS */
+/* FLOAT */
 
-.cart-btn,
+.cart-btn{
+
+position:fixed;
+right:20px;
+bottom:95px;
+background:orange;
+color:white;
+padding:18px 24px;
+border-radius:50px;
+font-size:24px;
+font-weight:bold;
+z-index:9999;
+cursor:pointer;
+
+}
+
 .whatsapp-btn{
 
 position:fixed;
 right:20px;
-border-radius:50px;
-padding:16px 24px;
-font-size:24px;
-font-weight:bold;
-color:white;
-cursor:pointer;
-z-index:9999;
-
-}
-
-.cart-btn{
-bottom:90px;
-background:orange;
-}
-
-.whatsapp-btn{
 bottom:20px;
 background:#25D366;
-}
-
-/* ADMIN PANEL */
-
-.admin-panel{
-
-background:white;
-margin-top:20px;
-padding:20px;
-border-radius:18px;
-
-}
-
-.admin-panel input{
-
-width:100%;
-padding:14px;
-margin-bottom:12px;
-font-size:18px;
-border-radius:10px;
-border:1px solid #ccc;
-
-}
-
-.admin-panel button{
-
-background:#1f7f39;
 color:white;
-border:none;
-padding:14px;
-font-size:18px;
-border-radius:10px;
-width:100%;
+padding:18px 24px;
+border-radius:50px;
+font-size:24px;
+font-weight:bold;
+z-index:9999;
+cursor:pointer;
 
 }
 
-/* RESPONSIVE */
+/* MOBILE */
 
 @media(max-width:700px){
+
+.category-grid{
+grid-template-columns:1fr;
+}
+
+.products{
+grid-template-columns:1fr;
+}
 
 .hero h1{
 font-size:34px;
@@ -343,11 +383,7 @@ font-size:20px;
 }
 
 .section h2{
-font-size:32px;
-}
-
-.grid{
-grid-template-columns:1fr;
+font-size:34px;
 }
 
 }
@@ -371,7 +407,7 @@ KheriMart
 
 </header>
 
-<!-- MOBILE MENU -->
+<!-- MENU -->
 
 <div class="mobile-menu" id="mobileMenu">
 
@@ -385,11 +421,19 @@ KheriMart
 
 <a href="#categories">🛒 Categories</a>
 
-<a href="#products">📦 Products</a>
+<a href="#grocery">🥦 Grocery</a>
 
-<a href="#features">⭐ Features</a>
+<a href="#medicines">💊 Medicines</a>
 
-<a href="#admin">⚙ Admin Panel</a>
+<a href="#electronics">📱 Electronics</a>
+
+<a href="#construction">🏗 Construction</a>
+
+<a href="#fashion">👕 Fashion</a>
+
+<a href="#beauty">🧴 Beauty</a>
+
+<a href="#admin">⚙ Admin</a>
 
 <a href="#contact">📞 Contact</a>
 
@@ -401,7 +445,7 @@ KheriMart
 
 <input
 type="text"
-id="searchBox"
+id="searchInput"
 placeholder="Search Products..."
 onkeyup="searchProducts()"
 />
@@ -420,7 +464,7 @@ Lakhimpur Kheri Ka Apna Online Bazaar
 Groceries, Medicines, Electronics aur Daily Needs ab ghar tak.
 </p>
 
-<button onclick="document.getElementById('products').scrollIntoView()">
+<button onclick="document.getElementById('categories').scrollIntoView()">
 Order Now
 </button>
 
@@ -430,48 +474,40 @@ Order Now
 
 <section class="section" id="categories">
 
-<h2>Popular Categories</h2>
+<h2>
+Popular Categories
+</h2>
 
-<div class="grid">
+<div class="category-grid">
 
-<div class="category-card">
+<div class="category-card" onclick="openCategory('grocery')">
 <span>🛒</span>
-Grocery
+<h3>Grocery</h3>
 </div>
 
-<div class="category-card">
+<div class="category-card" onclick="openCategory('medicines')">
 <span>💊</span>
-Medicines
+<h3>Medicines</h3>
 </div>
 
-<div class="category-card">
+<div class="category-card" onclick="openCategory('electronics')">
 <span>📱</span>
-Electronics
+<h3>Electronics</h3>
 </div>
 
-<div class="category-card">
+<div class="category-card" onclick="openCategory('construction')">
 <span>🏗</span>
-Construction
+<h3>Construction</h3>
 </div>
 
-<div class="category-card">
-<span>🏡</span>
-Home Essentials
-</div>
-
-<div class="category-card">
-<span>✏</span>
-Stationery
-</div>
-
-<div class="category-card">
+<div class="category-card" onclick="openCategory('fashion')">
 <span>👕</span>
-Fashion
+<h3>Fashion</h3>
 </div>
 
-<div class="category-card">
+<div class="category-card" onclick="openCategory('beauty')">
 <span>🧴</span>
-Beauty
+<h3>Beauty</h3>
 </div>
 
 </div>
@@ -480,15 +516,17 @@ Beauty
 
 <!-- PRODUCTS -->
 
-<section class="section" id="products">
+<section class="section">
 
-<h2>Products</h2>
+<h2 id="productTitle">
+All Products
+</h2>
 
-<div class="grid" id="productGrid">
+<div class="products" id="productContainer">
 
-<!-- PRODUCT -->
+<!-- GROCERY -->
 
-<div class="product product-item">
+<div class="product grocery searchable">
 
 <img src="https://images.unsplash.com/photo-1542838132-92c53300491e?w=500">
 
@@ -504,9 +542,7 @@ Add To Cart
 
 </div>
 
-<!-- PRODUCT -->
-
-<div class="product product-item">
+<div class="product grocery searchable">
 
 <img src="https://images.unsplash.com/photo-1586201375761-83865001e31c?w=500">
 
@@ -522,9 +558,43 @@ Add To Cart
 
 </div>
 
-<!-- PRODUCT -->
+<!-- MEDICINES -->
 
-<div class="product product-item">
+<div class="product medicines searchable">
+
+<img src="https://images.unsplash.com/photo-1587854692152-cbe660dbde88?w=500">
+
+<h3>Paracetamol</h3>
+
+<div class="price">
+₹35
+</div>
+
+<button onclick="addToCart('Paracetamol',35)">
+Add To Cart
+</button>
+
+</div>
+
+<div class="product medicines searchable">
+
+<img src="https://images.unsplash.com/photo-1603398938378-e54eab446dde?w=500">
+
+<h3>Cough Syrup</h3>
+
+<div class="price">
+₹120
+</div>
+
+<button onclick="addToCart('Cough Syrup',120)">
+Add To Cart
+</button>
+
+</div>
+
+<!-- ELECTRONICS -->
+
+<div class="product electronics searchable">
 
 <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=500">
 
@@ -540,9 +610,59 @@ Add To Cart
 
 </div>
 
-<!-- PRODUCT -->
+<div class="product electronics searchable">
 
-<div class="product product-item">
+<img src="https://images.unsplash.com/photo-1517336714739-489689fd1ca8?w=500">
+
+<h3>Laptop</h3>
+
+<div class="price">
+₹45999
+</div>
+
+<button onclick="addToCart('Laptop',45999)">
+Add To Cart
+</button>
+
+</div>
+
+<!-- CONSTRUCTION -->
+
+<div class="product construction searchable">
+
+<img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=500">
+
+<h3>Cement</h3>
+
+<div class="price">
+₹420
+</div>
+
+<button onclick="addToCart('Cement',420)">
+Add To Cart
+</button>
+
+</div>
+
+<div class="product construction searchable">
+
+<img src="https://images.unsplash.com/photo-1599707254554-027aeb4deacd?w=500">
+
+<h3>Bricks</h3>
+
+<div class="price">
+₹9 each
+</div>
+
+<button onclick="addToCart('Bricks',9)">
+Add To Cart
+</button>
+
+</div>
+
+<!-- FASHION -->
+
+<div class="product fashion searchable">
 
 <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=500">
 
@@ -558,17 +678,69 @@ Add To Cart
 
 </div>
 
+<div class="product fashion searchable">
+
+<img src="https://images.unsplash.com/photo-1541099649105-f69ad21f3246?w=500">
+
+<h3>Jeans</h3>
+
+<div class="price">
+₹999
+</div>
+
+<button onclick="addToCart('Jeans',999)">
+Add To Cart
+</button>
+
+</div>
+
+<!-- BEAUTY -->
+
+<div class="product beauty searchable">
+
+<img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=500">
+
+<h3>Face Wash</h3>
+
+<div class="price">
+₹149
+</div>
+
+<button onclick="addToCart('Face Wash',149)">
+Add To Cart
+</button>
+
+</div>
+
+<div class="product beauty searchable">
+
+<img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=500">
+
+<h3>Perfume</h3>
+
+<div class="price">
+₹699
+</div>
+
+<button onclick="addToCart('Perfume',699)">
+Add To Cart
+</button>
+
+</div>
+
 </div>
 
 </section>
 
 <!-- FEATURES -->
 
-<section class="section" id="features">
+<section class="section">
 
-<h2>Why KheriMart?</h2>
+<h2>
+Why KheriMart?
+</h2>
 
-<div class="grid">
+<div class="feature-grid">
 
 <div class="feature">
 ⚡ Fast Delivery
@@ -590,21 +762,41 @@ Add To Cart
 
 </section>
 
-<!-- ADMIN PANEL -->
+<!-- ADMIN -->
 
 <section class="section" id="admin">
 
-<h2>Admin Panel</h2>
+<h2>
+Admin Panel
+</h2>
 
-<div class="admin-panel">
+<div class="admin">
 
-<input type="text" id="newProductName" placeholder="Product Name">
+<input
+type="text"
+id="adminName"
+placeholder="Product Name"
+/>
 
-<input type="number" id="newProductPrice" placeholder="Product Price">
+<input
+type="number"
+id="adminPrice"
+placeholder="Product Price"
+/>
 
-<input type="text" id="newProductImage" placeholder="Product Image URL">
+<input
+type="text"
+id="adminImage"
+placeholder="Paste Image URL"
+/>
 
-<button onclick="addNewProduct()">
+<input
+type="text"
+id="adminCategory"
+placeholder="Category Example grocery"
+/>
+
+<button onclick="addProduct()">
 Add Product
 </button>
 
@@ -616,7 +808,9 @@ Add Product
 
 <footer id="contact">
 
-<h2>KheriMart</h2>
+<h2>
+KheriMart
+</h2>
 
 <p>
 Lakhimpur Kheri, Uttar Pradesh
@@ -632,17 +826,21 @@ WhatsApp Orders Available
 
 </footer>
 
-<!-- FLOATING BUTTONS -->
+<!-- FLOAT -->
 
 <div class="cart-btn" onclick="openCart()">
+
 🛒 Cart (<span id="cartCount">0</span>)
+
 </div>
 
-<div class="whatsapp-btn" onclick="sendWhatsAppOrder()">
+<div class="whatsapp-btn" onclick="openCart()">
+
 WhatsApp
+
 </div>
 
-<!-- JAVASCRIPT -->
+<!-- SCRIPT -->
 
 <script>
 
@@ -657,28 +855,60 @@ document
 
 }
 
+/* CATEGORY OPEN */
+
+function openCategory(category){
+
+let products =
+document.querySelectorAll(".product");
+
+products.forEach((item)=>{
+
+if(item.classList.contains(category)){
+item.style.display="block";
+}else{
+item.style.display="none";
+}
+
+});
+
+document
+.getElementById("productTitle")
+innerText = category.toUpperCase();
+
+window.scrollTo({
+top:900,
+behavior:"smooth"
+});
+
+}
+
 /* SEARCH */
 
 function searchProducts(){
 
 let input =
 document
-.getElementById("searchBox")
+.getElementById("searchInput")
 .value
 .toLowerCase();
 
-let items =
-document.querySelectorAll(".product-item");
+let products =
+document.querySelectorAll(".searchable");
 
-items.forEach((item)=>{
+products.forEach((item)=>{
 
 let text =
 item.innerText.toLowerCase();
 
 if(text.includes(input)){
+
 item.style.display="block";
+
 }else{
+
 item.style.display="none";
+
 }
 
 });
@@ -719,55 +949,49 @@ return;
 
 }
 
-let message = "Cart Items:%0A%0A";
+let text = "KheriMart Order:%0A%0A";
 
 let total = 0;
 
 cart.forEach((item)=>{
 
-message += item.name + " - ₹" + item.price + "%0A";
+text += item.name + " - ₹" + item.price + "%0A";
 
 total += item.price;
 
 });
 
-message += "%0ATotal = ₹" + total;
+text += "%0ATotal = ₹" + total;
 
 window.open(
-"https://wa.me/919555153856?text=" + message,
+"https://wa.me/919555153856?text=" + text,
 "_blank"
 );
 
 }
 
-/* WHATSAPP ORDER */
+/* ADMIN ADD PRODUCT */
 
-function sendWhatsAppOrder(){
-
-openCart();
-
-}
-
-/* ADMIN PANEL */
-
-function addNewProduct(){
+function addProduct(){
 
 let name =
-document
-.getElementById("newProductName")
-.value;
+document.getElementById("adminName").value;
 
 let price =
-document
-.getElementById("newProductPrice")
-.value;
+document.getElementById("adminPrice").value;
 
 let image =
-document
-.getElementById("newProductImage")
-.value;
+document.getElementById("adminImage").value;
 
-if(name==="" || price==="" || image===""){
+let category =
+document.getElementById("adminCategory").value;
+
+if(
+name==="" ||
+price==="" ||
+image==="" ||
+category===""
+){
 
 alert("Fill All Fields");
 
@@ -775,9 +999,9 @@ return;
 
 }
 
-let html = `
+let product = `
 
-<div class="product product-item">
+<div class="product ${category} searchable">
 
 <img src="${image}">
 
@@ -796,32 +1020,17 @@ Add To Cart
 `;
 
 document
-.getElementById("productGrid")
-.innerHTML += html;
+.getElementById("productContainer")
+.innerHTML += product;
 
-alert("Product Added");
+alert("Product Added Successfully");
 
-document.getElementById("newProductName").value="";
-document.getElementById("newProductPrice").value="";
-document.getElementById("newProductImage").value="";
-
-}
-
-/* PAYMENT GATEWAY DEMO */
-
-function paymentGateway(){
-
-alert("Razorpay / PhonePe / UPI Integration Here");
+document.getElementById("adminName").value="";
+document.getElementById("adminPrice").value="";
+document.getElementById("adminImage").value="";
+document.getElementById("adminCategory").value="";
 
 }
-
-/* FIREBASE PLACEHOLDER */
-
-console.log("Firebase Database Connect Here");
-
-/* SHOP OWNER DASHBOARD PLACEHOLDER */
-
-console.log("Dashboard Ready");
 
 </script>
 
